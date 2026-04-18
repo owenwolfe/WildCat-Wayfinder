@@ -14,7 +14,7 @@ For example, this example will be in ~/Downloads.
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Holt + Campus Viewer</title>
+  <title>Holt + O'Connell + Campus Viewer</title>
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <style>
     html, body, #plot {
@@ -66,7 +66,7 @@ For example, this example will be in ~/Downloads.
 </head>
 <body>
   <div id="info">
-    <div><strong>Holt combined graph with campus floor 0</strong></div>
+    <div><strong>Holt + O'Connell combined graph with campus floor 0</strong></div>
     <div id="status">Loading…</div>
 
     <div id="controls">
@@ -83,14 +83,9 @@ For example, this example will be in ~/Downloads.
     </div>
 
     <div class="hint">
-      Examples:
-      <span class="mono">Entrance 6 Outside</span>,
-      <span class="mono">Entrance 8 Outside</span>,
-      <span class="mono">Entrance 6@1</span>,
-      <span class="mono">135@1</span>,
-      <span class="mono">277@2</span>,
-      <span class="mono">Portal 1@2</span>,
-      <span class="mono">north-stair-3@3</span><br>
+      Holt: <span class="mono">135@holt</span>, <span class="mono">277@holt</span>, <span class="mono">Entrance 6@1</span>, <span class="mono">135@1</span>, <span class="mono">277@2</span><br>
+      O'Connell: <span class="mono">200@oconnell</span>, <span class="mono">North Entrance@11</span>, <span class="mono">South Entrance@11</span><br>
+      Building names: <span class="mono">holt</span>, <span class="mono">oconnell</span>, <span class="mono">oc</span> &nbsp;|&nbsp; Floor numbers: <span class="mono">@1</span>–<span class="mono">@3</span> (Holt), <span class="mono">@11</span>–<span class="mono">@14</span> (O'Connell)<br>
       Optimized version: A* solves first, then animates the final route.
     </div>
   </div>
@@ -102,7 +97,6 @@ For example, this example will be in ~/Downloads.
     const STAIR_COST = 6.0;
     const ELEVATOR_COST = 4.0;
     const ANIMATION_DELAY_MS = 120;
-    const EXTERIOR_TO_CAMPUS_COST = 8.0;
     const EXTERIOR_TO_BUILDING_COST = 1.0;
 
     const MANUAL_ENTRANCE_BINDINGS = {
@@ -113,7 +107,9 @@ For example, this example will be in ~/Downloads.
       "Entrance 5": "osm-node-12016281847",
       "Entrance 6": "osm-node-12016281847",
       "Entrance 7": "osm-node-10123224954",
-      "Entrance 8": "osm-node-10123224954"
+      "Entrance 8": "osm-node-10123224954",
+      "South Entrance": "osm-node-7706177462",
+      "North Entrance": "osm-node-12217284210"
     };
 
     const statusEl = document.getElementById("status");
@@ -165,12 +161,41 @@ For example, this example will be in ~/Downloads.
       return `${floorLevel}:${nodeId}`;
     }
 
+    // Maps building name aliases to the buildingId values used in the JSON files.
+    // Keys are lowercase; add more as needed.
+    const BUILDING_ID_MAP = {
+      "holt":      "holt",
+      "oconnell":  "building-oconnel",
+      "o'connell": "building-oconnel",
+      "oc":        "building-oconnel"
+    };
+
+    // O'Connell floors are offset by 10 (11-14); Holt floors are 1-3.
+    // This lets us filter by building when the user types e.g. "200@oconnell".
+    function floorLevelsForBuilding(buildingId) {
+      const normalized = String(buildingId || "").toLowerCase();
+      if (normalized === "holt") return [1, 2, 3];
+      if (normalized === "building-oconnel") return [11, 12, 13, 14];
+      return null; // unknown — no filter
+    }
+
     function parseLookup(text) {
       const raw = String(text || "").trim();
-      const m = raw.match(/^(.*?)(?:@(\d+))?$/);
+
+      // Support "query@building" e.g. "200@oconnell" or "200@holt"
+      // Also still support "query@floorNumber" e.g. "277@2"
+      const m = raw.match(/^(.*?)(?:@(.+))?$/);
+      const queryPart = m ? m[1] : raw;
+      const atPart = m && m[2] ? m[2].trim() : null;
+
+      const floorNum = atPart && /^\d+$/.test(atPart) ? Number(atPart) : null;
+      const buildingKey = atPart && !floorNum ? normalizeText(atPart) : null;
+      const buildingId = buildingKey ? (BUILDING_ID_MAP[buildingKey] ?? null) : null;
+
       return {
-        query: normalizeText(m ? m[1] : raw),
-        floor: m && m[2] ? Number(m[2]) : null
+        query: normalizeText(queryPart),
+        floor: floorNum,
+        buildingId: buildingId
       };
     }
 
@@ -198,8 +223,16 @@ For example, this example will be in ~/Downloads.
       const q = lookup.query;
       if (!q) return null;
 
-      let candidates = allNodes.filter(n => {
+      const buildingFloors = lookup.buildingId ? floorLevelsForBuilding(lookup.buildingId) : null;
+
+      function matchesFilters(n) {
         if (lookup.floor != null && n.floorLevel !== lookup.floor) return false;
+        if (buildingFloors && !buildingFloors.includes(n.floorLevel)) return false;
+        return true;
+      }
+
+      let candidates = allNodes.filter(n => {
+        if (!matchesFilters(n)) return false;
         return nodeKeys(n).includes(q) || nodeKeys(n).includes(`${q}@${n.floorLevel}`);
       });
 
@@ -213,7 +246,7 @@ For example, this example will be in ~/Downloads.
       }
 
       candidates = allNodes.filter(n => {
-        if (lookup.floor != null && n.floorLevel !== lookup.floor) return false;
+        if (!matchesFilters(n)) return false;
         return nodeKeys(n).some(k => k.includes(q));
       });
 
@@ -539,6 +572,9 @@ For example, this example will be in ~/Downloads.
           statusEl.textContent = `Done. Cost=${gScore.get(currentGoalId).toFixed(2)} | ${routeText}`;
           renderFast(current, finalPath);
 
+
+          //await animatePath(finalPath);
+
           return;
         }
 
@@ -567,23 +603,38 @@ For example, this example will be in ~/Downloads.
       renderFast();
     }
 
+    // Files tagged with a floorOffset are remapped: floorLevel += floorOffset.
+    // This prevents Holt floors (0-3) from colliding with O'Connell floors (11-14).
     function buildCombinedGraph(files) {
-      floors = files.map(d => ({
-        data: d,
-        floorLevel: d.project?.floorLevel ?? 1,
-        pixelsPerMeter: d.calibration?.pixelsPerMeter || 50
-      })).sort((a, b) => a.floorLevel - b.floorLevel);
+      floors = files.map(d => {
+        const rawLevel = d.project?.floorLevel ?? 1;
+        const offset = d._floorOffset ?? 0;
+        return {
+          data: d,
+          floorLevel: rawLevel + offset,
+          rawFloorLevel: rawLevel,
+          pixelsPerMeter: d.calibration?.pixelsPerMeter || 50
+        };
+      }).sort((a, b) => a.floorLevel - b.floorLevel);
 
       const floorByLevel = new Map(floors.map(f => [f.floorLevel, f]));
       const holtPPM = floorByLevel.get(1)?.pixelsPerMeter || 16.41385;
       const campusPPM = floorByLevel.get(0)?.pixelsPerMeter || 1.28326;
       const campusScale = holtPPM / campusPPM;
 
+      // O'Connell floor 1 PPM vs Holt floor 1 PPM
+      const oconnellPPM = floorByLevel.get(11)?.pixelsPerMeter || 21.88513;
+      const oconnellScale = holtPPM / oconnellPPM;
+
       const FLOOR_SCALES = {
         0: campusScale,
         1: 1.0,
         2: 1.0,
-        3: 1.0
+        3: 1.0,
+        11: oconnellScale,
+        12: oconnellScale,
+        13: oconnellScale,
+        14: oconnellScale
       };
 
       const rawNodes = [];
@@ -593,28 +644,51 @@ For example, this example will be in ~/Downloads.
       const entryEdges = [];
 
       for (const floor of floors) {
+        const buildingId = floor.data.project?.buildingId ?? null;
         for (const n of floor.data.nodes || []) {
           rawNodes.push({
             ...n,
             uid: namespacedId(floor.floorLevel, n.id),
             floorLevel: floor.floorLevel,
-            pixelsPerMeter: floor.pixelsPerMeter
+            pixelsPerMeter: floor.pixelsPerMeter,
+            buildingId: buildingId
           });
         }
       }
 
-      const xs = rawNodes.map(n => n.x);
-      const ys = rawNodes.map(n => n.y);
-      const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
-      const cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+      // Compute per-building centroids so each building is centered on itself,
+      // then the campus (floor 0) gets its own centroid too.
+      // Buildings are identified by their floor ranges.
+      function centroidFor(nodes) {
+        if (!nodes.length) return { cx: 0, cy: 0 };
+        const xs = nodes.map(n => n.x);
+        const ys = nodes.map(n => n.y);
+        return {
+          cx: (Math.min(...xs) + Math.max(...xs)) / 2,
+          cy: (Math.min(...ys) + Math.max(...ys)) / 2
+        };
+      }
+
+      const campusRaw   = rawNodes.filter(n => n.floorLevel === 0);
+      const holtRaw     = rawNodes.filter(n => n.floorLevel >= 1  && n.floorLevel <= 3);
+      const oconnellRaw = rawNodes.filter(n => n.floorLevel >= 11 && n.floorLevel <= 14);
+
+      const campusCentroid   = centroidFor(campusRaw);
+      const holtCentroid     = centroidFor(holtRaw);
+      const oconnellCentroid = centroidFor(oconnellRaw);
 
       allNodes = rawNodes.map(n => {
         const scale = FLOOR_SCALES[n.floorLevel] ?? 1.0;
+        let c;
+        if (n.floorLevel === 0)                              c = campusCentroid;
+        else if (n.floorLevel >= 1  && n.floorLevel <= 3)   c = holtCentroid;
+        else if (n.floorLevel >= 11 && n.floorLevel <= 14)  c = oconnellCentroid;
+        else                                                  c = holtCentroid;
         return {
           ...n,
           raw: { x: n.x, y: n.y },
-          x: (n.x - cx) * scale,
-          y: -(n.y - cy) * scale,
+          x: (n.x - c.cx) * scale,
+          y: -(n.y - c.cy) * scale,
           z: visualZForFloor(n.floorLevel)
         };
       });
@@ -637,13 +711,20 @@ For example, this example will be in ~/Downloads.
         }
       }
 
-      for (let i = 0; i < floors.length - 1; i++) {
-        const low = allNodes.filter(n => n.floorLevel === floors[i].floorLevel && n.kind === "transition");
-        const high = allNodes.filter(n => n.floorLevel === floors[i + 1].floorLevel && n.kind === "transition");
+      // Only pair transitions between consecutive floors of the SAME building.
+      // Holt: floors 1,2,3 | O'Connell: floors 11,12,13,14
+      const holtFloors = floors.filter(f => f.floorLevel >= 1 && f.floorLevel <= 3);
+      const oconnellFloors = floors.filter(f => f.floorLevel >= 11 && f.floorLevel <= 14);
 
-        for (const [a, b] of pairNearestTransitions(low, high)) {
-          stairEdges.push({ from: a.uid, to: b.uid });
-          addAdjEdge(a.uid, b.uid, STAIR_COST, "stairs", true);
+      for (const buildingFloors of [holtFloors, oconnellFloors]) {
+        for (let i = 0; i < buildingFloors.length - 1; i++) {
+          const low = allNodes.filter(n => n.floorLevel === buildingFloors[i].floorLevel && n.kind === "transition");
+          const high = allNodes.filter(n => n.floorLevel === buildingFloors[i + 1].floorLevel && n.kind === "transition");
+
+          for (const [a, b] of pairNearestTransitions(low, high)) {
+            stairEdges.push({ from: a.uid, to: b.uid });
+            addAdjEdge(a.uid, b.uid, STAIR_COST, "stairs", true);
+          }
         }
       }
 
@@ -651,59 +732,49 @@ For example, this example will be in ~/Downloads.
       for (let i = 0; i < portals.length; i++) {
         for (let j = i + 1; j < portals.length; j++) {
           if (portals[i].floorLevel === portals[j].floorLevel) continue;
+          // Only connect portals within the same building (same floor range)
+          const iHolt = portals[i].floorLevel <= 3;
+          const jHolt = portals[j].floorLevel <= 3;
+          if (iHolt !== jHolt) continue;
           elevatorEdges.push({ from: portals[i].uid, to: portals[j].uid });
           addAdjEdge(portals[i].uid, portals[j].uid, ELEVATOR_COST, "elevator", true);
         }
       }
 
-      const floor1Entrances = allNodes.filter(n => n.floorLevel === 1 && n.kind === "entrance");
+      // Connect ground-floor entrances of ALL buildings directly to their campus OSM node.
+      // Holt ground floor = floorLevel 1; O'Connell ground floor = floorLevel 11.
+      const buildingGroundFloors = [1, 11];
       const campusNodes = allNodes.filter(n => n.floorLevel === 0);
 
-      for (const entrance of floor1Entrances) {
-        let chosenCampus = null;
+      for (const groundLevel of buildingGroundFloors) {
+        const groundEntrances = allNodes.filter(n => n.floorLevel === groundLevel && n.kind === "entrance");
 
-        const manualCampusId = MANUAL_ENTRANCE_BINDINGS[entrance.label];
-        if (manualCampusId) {
-          const cleanId = String(manualCampusId).replace(/@0$/, "");
-          chosenCampus = allNodes.find(n => n.floorLevel === 0 && n.id === cleanId);
-        }
+        for (const entrance of groundEntrances) {
+          let chosenCampus = null;
 
-        if (!chosenCampus) {
-          let bestDist = Infinity;
-          for (const campus of campusNodes) {
-            const d = distanceScaled(entrance, campus);
-            if (d < bestDist) {
-              bestDist = d;
-              chosenCampus = campus;
+          const manualCampusId = MANUAL_ENTRANCE_BINDINGS[entrance.label];
+          if (manualCampusId) {
+            const cleanId = String(manualCampusId).replace(/@0$/, "");
+            chosenCampus = allNodes.find(n => n.floorLevel === 0 && n.id === cleanId);
+          }
+
+          if (!chosenCampus) {
+            let bestDist = Infinity;
+            for (const campus of campusNodes) {
+              const d = distanceScaled(entrance, campus);
+              if (d < bestDist) {
+                bestDist = d;
+                chosenCampus = campus;
+              }
             }
           }
+
+          if (!chosenCampus) continue;
+
+          // Direct edge: campus OSM node <-> building entrance
+          addAdjEdge(chosenCampus.uid, entrance.uid, EXTERIOR_TO_BUILDING_COST, "building-entry", true);
+          entryEdges.push({ from: chosenCampus.uid, to: entrance.uid });
         }
-
-        if (!chosenCampus) continue;
-
-        const exteriorNode = {
-          uid: `0:exterior-for-${entrance.id}`,
-          id: `exterior-for-${entrance.id}`,
-          label: `${entrance.label} Outside`,
-          kind: "entrance",
-          floorLevel: 0,
-          pixelsPerMeter: chosenCampus.pixelsPerMeter || campusPPM,
-          raw: {
-            x: entrance.raw.x,
-            y: entrance.raw.y
-          },
-          x: entrance.x,
-          y: entrance.y,
-          z: visualZForFloor(0)
-        };
-
-        addSyntheticNode(exteriorNode);
-
-        addAdjEdge(exteriorNode.uid, chosenCampus.uid, EXTERIOR_TO_CAMPUS_COST, "campus-entry", true);
-        entryEdges.push({ from: exteriorNode.uid, to: chosenCampus.uid });
-
-        addAdjEdge(exteriorNode.uid, entrance.uid, EXTERIOR_TO_BUILDING_COST, "building-entry", true);
-        entryEdges.push({ from: exteriorNode.uid, to: entrance.uid });
       }
 
       baseNodeTrace = {
@@ -728,19 +799,30 @@ For example, this example will be in ~/Downloads.
       baseEntryTrace = buildLineTrace(entryEdges, "entry links", "black", 5);
 
       statusEl.textContent =
-        `Loaded ${allNodes.length} nodes across ${floors.length} floors. Campus scale=${campusScale.toFixed(2)}x. Walkways=${walkwayEdges.length}, stairs=${stairEdges.length}, elevators=${elevatorEdges.length}, entry-links=${entryEdges.length}`;
+        `Loaded ${allNodes.length} nodes across ${floors.length} floors (2 buildings). Campus scale=${campusScale.toFixed(2)}x, O'Connell scale=${oconnellScale.toFixed(2)}x. Walkways=${walkwayEdges.length}, stairs=${stairEdges.length}, elevators=${elevatorEdges.length}, entry-links=${entryEdges.length}`;
     }
 
     async function init() {
       try {
-        const files = await Promise.all([
+        const [campus, holt1, holt2, holt3, oc1, oc2, oc3, oc4] = await Promise.all([
           fetch("./campus-graph-map-editor.json").then(r => r.json()),
           fetch("./holt-floor-1.json").then(r => r.json()),
           fetch("./holt-floor-2.json").then(r => r.json()),
-          fetch("./holt-floor-3.json").then(r => r.json())
+          fetch("./holt-floor-3.json").then(r => r.json()),
+          fetch("./oconnell1.json").then(r => r.json()),
+          fetch("./oconnell2.json").then(r => r.json()),
+          fetch("./oconnell3.json").then(r => r.json()),
+          fetch("./oconnell4.json").then(r => r.json())
         ]);
 
-        buildCombinedGraph(files);
+        // Tag O'Connell files with a floor offset of 10 so their floors
+        // become 11, 12, 13, 14 — avoiding collision with Holt (1, 2, 3).
+        oc1._floorOffset = 10;
+        oc2._floorOffset = 10;
+        oc3._floorOffset = 10;
+        oc4._floorOffset = 10;
+
+        buildCombinedGraph([campus, holt1, holt2, holt3, oc1, oc2, oc3, oc4]);
         renderFast();
       } catch (err) {
         console.error(err);
