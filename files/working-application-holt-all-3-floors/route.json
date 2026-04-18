@@ -1,0 +1,312 @@
+[
+  {
+    "uid": "0:osm-building-1106265307-destination",
+    "id": "osm-building-1106265307-destination",
+    "label": "Holt Hall Station",
+    "floor": 0,
+    "kind": "destination",
+    "x": 5664.636745086731,
+    "y": 7149.684352884188,
+    "z": 0
+  },
+  {
+    "uid": "0:osm-node-5861595676",
+    "id": "osm-node-5861595676",
+    "label": "osm-node-5861595676",
+    "floor": 0,
+    "kind": "junction",
+    "x": 5641.48549865187,
+    "y": 7220.4171665774375,
+    "z": 0
+  },
+  {
+    "uid": "0:exterior-for-entrance-b45ad604",
+    "id": "exterior-for-entrance-b45ad604",
+    "label": "Entrance 1 Outside",
+    "floor": 0,
+    "kind": "entrance",
+    "x": 5641.48549865187,
+    "y": 7220.4171665774375,
+    "z": 0
+  },
+  {
+    "uid": "1:entrance-b45ad604",
+    "id": "entrance-b45ad604",
+    "label": "Entrance 1",
+    "floor": 1,
+    "kind": "entrance",
+    "x": 175.32581794192333,
+    "y": -386.23642016631277,
+    "z": 220
+  },
+  {
+    "uid": "1:transition-e9f46115",
+    "id": "transition-e9f46115",
+    "label": "middle-south-stair",
+    "floor": 1,
+    "kind": "transition",
+    "x": 86.82645417332606,
+    "y": -369.8672743877986,
+    "z": 220
+  },
+  {
+    "uid": "2:transition-6c351d49",
+    "id": "transition-6c351d49",
+    "label": "middle-low-up-down",
+    "floor": 2,
+    "kind": "transition",
+    "x": -40.430140479286706,
+    "y": -385.7941884863677,
+    "z": 440
+  },
+  {
+    "uid": "3:transition-438f8330",
+    "id": "transition-438f8330",
+    "label": "south-middle-stair-3",
+    "floor": 3,
+    "kind": "transition",
+    "x": -75.95000948902066,
+    "y": -401.2973496485246,
+    "z": 660
+  },
+  {
+    "uid": "3:junction-c0a5af7b",
+    "id": "junction-c0a5af7b",
+    "label": "Junction 11",
+    "floor": 3,
+    "kind": "junction",
+    "x": -89.58697771769835,
+    "y": -389.4482418662425,
+    "z": 660
+  },
+  {
+    "uid": "3:junction-09b77186",
+    "id": "junction-09b77186",
+    "label": "Junction 10",
+    "floor": 3,
+    "kind": "junction",
+    "x": -90.47350254039338,
+    "y": -217.46242626340552,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-e8db4bf7",
+    "id": "destination-e8db4bf7",
+    "label": "347",
+    "floor": 3,
+    "kind": "destination",
+    "x": -127.89243896440735,
+    "y": -213.90960095187882,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-ed9ec51f",
+    "id": "destination-ed9ec51f",
+    "label": "336",
+    "floor": 3,
+    "kind": "destination",
+    "x": -170.86840938954606,
+    "y": -212.06128493553194,
+    "z": 660
+  },
+  {
+    "uid": "3:junction-9ad98b72",
+    "id": "junction-9ad98b72",
+    "label": "Junction 8",
+    "floor": 3,
+    "kind": "junction",
+    "x": -206.60825431344313,
+    "y": -213.02980214993033,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-fc983c88",
+    "id": "destination-fc983c88",
+    "label": "339",
+    "floor": 3,
+    "kind": "destination",
+    "x": -202.96962982190507,
+    "y": -163.94034029013153,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-74dcbfdd",
+    "id": "destination-74dcbfdd",
+    "label": "334",
+    "floor": 3,
+    "kind": "destination",
+    "x": -208.4533170764106,
+    "y": -121.48810453061503,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-0d78fca2",
+    "id": "destination-0d78fca2",
+    "label": "332",
+    "floor": 3,
+    "kind": "destination",
+    "x": -213.01278991317122,
+    "y": -41.913209317034784,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-0ca2ae7e",
+    "id": "destination-0ca2ae7e",
+    "label": "337",
+    "floor": 3,
+    "kind": "destination",
+    "x": -218.52727679365876,
+    "y": 15.726936878523247,
+    "z": 660
+  },
+  {
+    "uid": "3:junction-030d3db9",
+    "id": "junction-030d3db9",
+    "label": "Junction 7",
+    "floor": 3,
+    "kind": "junction",
+    "x": -203.06215502266298,
+    "y": 40.516297140849815,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-9f9f6049",
+    "id": "destination-9f9f6049",
+    "label": "335",
+    "floor": 3,
+    "kind": "destination",
+    "x": -181.9284084147887,
+    "y": 51.40164724921988,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-6700ba0f",
+    "id": "destination-6700ba0f",
+    "label": "330",
+    "floor": 3,
+    "kind": "destination",
+    "x": -159.96285977078446,
+    "y": 32.17794223246847,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-402c574f",
+    "id": "destination-402c574f",
+    "label": "333",
+    "floor": 3,
+    "kind": "destination",
+    "x": -127.95426385465692,
+    "y": 44.99374557696933,
+    "z": 660
+  },
+  {
+    "uid": "3:junction-5bc49b4f",
+    "id": "junction-5bc49b4f",
+    "label": "Junction 5",
+    "floor": 3,
+    "kind": "junction",
+    "x": -87.81392807230827,
+    "y": 39.097770849848075,
+    "z": 660
+  },
+  {
+    "uid": "3:junction-0b910a68",
+    "id": "junction-0b910a68",
+    "label": "Junction 3",
+    "floor": 3,
+    "kind": "junction",
+    "x": -86.0408784269182,
+    "y": 346.72188432502537,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-4d23028d",
+    "id": "destination-4d23028d",
+    "label": "351",
+    "floor": 3,
+    "kind": "destination",
+    "x": -52.471608958351794,
+    "y": 349.63292676306185,
+    "z": 660
+  },
+  {
+    "uid": "3:anchor-87cd216e",
+    "id": "anchor-87cd216e",
+    "label": "Anchor 2",
+    "floor": 3,
+    "kind": "anchor",
+    "x": 71.5050803313386,
+    "y": 349.7504586045982,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-9a1d48d0",
+    "id": "destination-9a1d48d0",
+    "label": "353",
+    "floor": 3,
+    "kind": "destination",
+    "x": 150.6533910416482,
+    "y": 350.5009823186175,
+    "z": 660
+  },
+  {
+    "uid": "3:junction-91c40b0d",
+    "id": "junction-91c40b0d",
+    "label": "Junction 4",
+    "floor": 3,
+    "kind": "junction",
+    "x": 185.2357173177627,
+    "y": 350.2679836158055,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-0dc8f4f5",
+    "id": "destination-0dc8f4f5",
+    "label": "355",
+    "floor": 3,
+    "kind": "destination",
+    "x": 200.13255770831483,
+    "y": 349.63292676306185,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-4ef271e1",
+    "id": "destination-4ef271e1",
+    "label": "357",
+    "floor": 3,
+    "kind": "destination",
+    "x": 177.5631132638705,
+    "y": 391.2995934297286,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-1e2d1a4f",
+    "id": "destination-1e2d1a4f",
+    "label": "352",
+    "floor": 3,
+    "kind": "destination",
+    "x": 186.24366881942603,
+    "y": 439.04264898528413,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-def7d43a",
+    "id": "destination-def7d43a",
+    "label": "359",
+    "floor": 3,
+    "kind": "destination",
+    "x": 179.29922437498158,
+    "y": 536.2648712075063,
+    "z": 660
+  },
+  {
+    "uid": "3:destination-2a84512c",
+    "id": "destination-2a84512c",
+    "label": "361",
+    "floor": 3,
+    "kind": "destination",
+    "x": 182.77144659720375,
+    "y": 582.2718156519509,
+    "z": 660
+  }
+]
