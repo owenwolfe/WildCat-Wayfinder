@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WildCat Wayfinder</title>
   <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 </head>
 <body>
   <div class="shell">
@@ -32,6 +33,7 @@
           Floor
           <select id="floorFilter"></select>
         </label>
+        <!--
         <label>
           Route mode
           <select id="routeMode">
@@ -40,6 +42,7 @@
             <option value="stairs">Stairs preferred</option>
           </select>
         </label>
+        -->
       </section>
 
       <section class="stack-md">
@@ -124,6 +127,33 @@
         </div>
       </section>
 
+<section class="card panel-wide">
+  <div class="panel-header">
+    <h3>Route map</h3>
+    <span id="routeMapLabel" class="badge">No floor selected</span>
+  </div>
+
+  <div class="button-row" style="margin-bottom: 12px;">
+    <button id="routePrevBtn" class="ghost">Back</button>
+    <div id="routeMapStepLabel" class="small muted" style="align-self: center;">No segment selected</div>
+    <button id="routeNextBtn">Next</button>
+  </div>
+
+  <div id="routeMapStage" style="position: relative; width: 100%; min-height: 520px; border: 1px solid #d9e0ea; border-radius: 14px; overflow: hidden; background: #f8fafc;">
+    <img id="routeMapImage" alt="Floor map" style="display: block; width: 100%; height: auto;" />
+    <svg id="routeMapOverlay" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"
+         style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;">
+      <polyline id="routePolyline"
+                fill="none"
+                stroke="#d946ef"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                points="" />
+    </svg>
+  </div>
+</section> 
+
       <section class="card">
         <div class="panel-header">
           <h3>Supported class locations</h3>
@@ -142,6 +172,7 @@
     </main>
   </div>
 
-  <script type="module" src="./app.js"></script>
+<script src="./engine-adapter.js"></script>
+<script type="module" src="./app.js"></script>
 </body>
 </html>

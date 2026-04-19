@@ -7,7 +7,9 @@ const state = {
   supportedClasses: new Map(),
   selectedStart: null,
   selectedDestination: null,
-  healthIssues: []
+  healthIssues: [],
+  routeMapGroups: [],
+  routeMapIndex: 0
 };
 
 const els = {
@@ -16,7 +18,8 @@ const els = {
   dataSummary: document.getElementById("dataSummary"),
   buildingFilter: document.getElementById("buildingFilter"),
   floorFilter: document.getElementById("floorFilter"),
-  routeMode: document.getElementById("routeMode"),
+  //routeMode: document.getElementById("routeMode"),
+  routeMode: null,
   startMode: document.getElementById("startMode"),
   destinationMode: document.getElementById("destinationMode"),
   startInput: document.getElementById("startInput"),
@@ -35,6 +38,13 @@ const els = {
   floorPreview: document.getElementById("floorPreview"),
   routeStatus: document.getElementById("routeStatus"),
   routeSummary: document.getElementById("routeSummary"),
+  routeMapLabel: document.getElementById("routeMapLabel"),
+  routeMapImage: document.getElementById("routeMapImage"),
+  routeMapOverlay: document.getElementById("routeMapOverlay"),
+  routePolyline: document.getElementById("routePolyline"),
+  routeMapStepLabel: document.getElementById("routeMapStepLabel"),
+  routePrevBtn: document.getElementById("routePrevBtn"),
+  routeNextBtn: document.getElementById("routeNextBtn"),
   classCoverage: document.getElementById("classCoverage"),
   healthPanel: document.getElementById("healthPanel")
 };
@@ -172,6 +182,137 @@ function escapeHtml(text) {
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function clearRouteMap(message = "No floor selected") {
+  state.routeMapGroups = [];
+  state.routeMapIndex = 0;
+
+  els.routeMapLabel.textContent = message;
+  els.routeMapStepLabel.textContent = "No segment selected";
+  els.routeMapImage.removeAttribute("src");
+  els.routeMapImage.style.display = "none";
+  els.routePolyline.setAttribute("points", "");
+  els.routeMapOverlay.setAttribute("viewBox", "0 0 1000 1000");
+
+  if (els.routePrevBtn) els.routePrevBtn.disabled = true;
+  if (els.routeNextBtn) els.routeNextBtn.disabled = true;
+}
+
+function updateRouteMapButtons() {
+  const total = state.routeMapGroups.length;
+  const current = state.routeMapIndex;
+
+  els.routeMapStepLabel.textContent = total
+    ? `${state.routeMapGroups[current].buildingLabel} · Floor ${state.routeMapGroups[current].floorLevel} · Step ${current + 1} of ${total}`
+    : "No segment selected";
+
+  if (els.routePrevBtn) els.routePrevBtn.disabled = current <= 0;
+  if (els.routeNextBtn) els.routeNextBtn.disabled = current >= total - 1;
+}
+
+function renderRouteMapGroup(index) {
+  const group = state.routeMapGroups[index];
+
+  if (!group) {
+    clearRouteMap();
+    return;
+  }
+
+  const graphEntry = findGraphForFloor(group.buildingKey, group.floorLevel);
+  const imageSrc = graphEntry?.data?.sourceImage?.dataUrl;
+
+  state.routeMapIndex = index;
+  updateRouteMapButtons();
+
+  if (!graphEntry || !imageSrc) {
+    els.routeMapLabel.textContent = `${group.buildingLabel} · Floor ${group.floorLevel}`;
+    els.routeMapImage.removeAttribute("src");
+    els.routeMapImage.style.display = "none";
+    els.routePolyline.setAttribute("points", "");
+    return;
+  }
+
+  const points = group.nodes
+    .map((step) => state.allNodes.find((node) => node.uid === step.uid))
+    .filter(Boolean)
+    .map((node) => `${node.raw?.x ?? node.x},${node.raw?.y ?? node.y}`)
+    .join(" ");
+
+  els.routeMapLabel.textContent = `${group.buildingLabel} · Floor ${group.floorLevel}`;
+els.routePolyline.setAttribute("points", points);
+
+const routeNodes = group.nodes
+  .map((step) => state.allNodes.find((node) => node.uid === step.uid))
+  .filter(Boolean);
+
+if (routeNodes.length) {
+  const xs = routeNodes.map((node) => node.raw?.x ?? node.x);
+  const ys = routeNodes.map((node) => node.raw?.y ?? node.y);
+
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+
+  const pad = 120;
+  const viewX = Math.max(0, minX - pad);
+  const viewY = Math.max(0, minY - pad);
+  const viewW = (maxX - minX) + pad * 2;
+  const viewH = (maxY - minY) + pad * 2;
+
+  els.routeMapOverlay.setAttribute("viewBox", `${viewX} ${viewY} ${viewW} ${viewH}`);
+}  els.routeMapImage.style.display = "block";
+
+  els.routeMapImage.onload = () => {
+    const width = els.routeMapImage.naturalWidth || 1000;
+    const height = els.routeMapImage.naturalHeight || 1000;
+    els.routeMapOverlay.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  };
+
+  els.routeMapImage.src = imageSrc;
+}
+
+function getRouteFloorGroups(path) {
+  const groups = [];
+  let current = null;
+
+  for (const step of path || []) {
+    const key = `${step.buildingKey}:${step.floorLevel}`;
+    if (!current || current.key !== key) {
+      current = {
+        key,
+        buildingKey: step.buildingKey,
+        buildingLabel: step.buildingLabel,
+        floorLevel: step.floorLevel,
+        nodes: []
+      };
+      groups.push(current);
+    }
+    current.nodes.push(step);
+  }
+
+  return groups;
+}
+
+function findGraphForFloor(buildingKey, floorLevel) {
+  return state.rawGraphs.find((entry) =>
+    entry.buildingKey === buildingKey &&
+    Number(entry.floorLevelOverride) === Number(floorLevel)
+  );
+}
+
+function renderRouteMap(result) {
+  const groups = getRouteFloorGroups(result?.path || []);
+
+  if (!groups.length) {
+    clearRouteMap();
+    return;
+  }
+
+  state.routeMapGroups = groups;
+  state.routeMapIndex = 0;
+  renderRouteMapGroup(0);
 }
 
 function renderSelection(element, entity) {
@@ -410,11 +551,15 @@ function resolveEntity(rawValue, mode, scope = "both") {
 }
 
 function renderRouteResult(result) {
+  const noteHtml = result.note
+    ? `<div class="small muted">${escapeHtml(result.note)}</div>`
+    : "";
+
   els.routeSummary.className = "route-summary";
   els.routeSummary.innerHTML = `
     <article class="route-step">
       <strong>${escapeHtml(result.summary || "Route preview ready")}</strong>
-      <div class="small muted">${escapeHtml(result.note || "This is the preview layer for the UI.")}</div>
+      ${noteHtml}
     </article>
     ${(result.steps || []).map((step) => `
       <article class="route-step">
@@ -658,7 +803,8 @@ async function previewRoute() {
     if (!state.selectedStart || !state.selectedDestination) return;
   }
 
-  const mode = els.routeMode.value;
+  //const mode = els.routeMode.value; //USE THIS TO CHANGE BETWEEN ROUTE PREFERENCES
+  const mode = "default";
   els.routeStatus.textContent = "Previewing";
   let result;
 
@@ -689,6 +835,7 @@ async function previewRoute() {
 
   els.routeStatus.textContent = result.ok ? "Preview ready" : "Preview failed";
   renderRouteResult(result);
+  renderRouteMap(result);
 }
 
 function resetSelections() {
@@ -736,7 +883,24 @@ els.resolveBtn.addEventListener("click", resolveSelections);
 els.previewBtn.addEventListener("click", previewRoute);
 els.resetBtn.addEventListener("click", resetSelections);
 
+if (els.routePrevBtn) {
+  els.routePrevBtn.addEventListener("click", () => {
+    if (state.routeMapIndex > 0) {
+      renderRouteMapGroup(state.routeMapIndex - 1);
+    }
+  });
+}
+
+if (els.routeNextBtn) {
+  els.routeNextBtn.addEventListener("click", () => {
+    if (state.routeMapIndex < state.routeMapGroups.length - 1) {
+      renderRouteMapGroup(state.routeMapIndex + 1);
+    }
+  });
+}
+
 renderSelection(els.startSelection, null);
 renderSelection(els.destinationSelection, null);
 renderFloorOptions();
 updateSuggestionLists();
+clearRouteMap();
