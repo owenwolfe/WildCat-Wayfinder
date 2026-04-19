@@ -139,19 +139,19 @@
     <button id="routeNextBtn">Next</button>
   </div>
 
-  <div id="routeMapStage" style="position: relative; width: 100%; min-height: 520px; border: 1px solid #d9e0ea; border-radius: 14px; overflow: hidden; background: #f8fafc;">
-    <img id="routeMapImage" alt="Floor map" style="display: block; width: 100%; height: auto;" />
-    <svg id="routeMapOverlay" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"
-         style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;">
-      <polyline id="routePolyline"
-                fill="none"
-                stroke="#d946ef"
-                stroke-width="6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                points="" />
-    </svg>
-  </div>
+<div id="routeMapStage" style="position: relative; width: 100%; min-height: 520px; border: 1px solid #d9e0ea; border-radius: 14px; overflow: hidden; background: #f8fafc;">
+  <svg id="routeMapOverlay" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"
+       style="display: block; width: 100%; height: 100%; min-height: 520px;">
+    <image id="routeMapImage" href="" x="0" y="0" width="1000" height="1000" preserveAspectRatio="xMidYMid meet"></image>
+    <polyline id="routePolyline"
+              fill="none"
+              stroke="#d946ef"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              points="" />
+  </svg>
+</div>
 </section> 
 
       <section class="card">

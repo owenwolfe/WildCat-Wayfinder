@@ -190,8 +190,9 @@ function clearRouteMap(message = "No floor selected") {
 
   els.routeMapLabel.textContent = message;
   els.routeMapStepLabel.textContent = "No segment selected";
-  els.routeMapImage.removeAttribute("src");
-  els.routeMapImage.style.display = "none";
+  els.routeMapImage.setAttribute("href", "");
+  els.routeMapImage.setAttribute("width", "1000");
+  els.routeMapImage.setAttribute("height", "1000");
   els.routePolyline.setAttribute("points", "");
   els.routeMapOverlay.setAttribute("viewBox", "0 0 1000 1000");
 
@@ -227,50 +228,71 @@ function renderRouteMapGroup(index) {
 
   if (!graphEntry || !imageSrc) {
     els.routeMapLabel.textContent = `${group.buildingLabel} · Floor ${group.floorLevel}`;
-    els.routeMapImage.removeAttribute("src");
-    els.routeMapImage.style.display = "none";
+    els.routeMapImage.setAttribute("href", "");
     els.routePolyline.setAttribute("points", "");
+    els.routeMapOverlay.setAttribute("viewBox", "0 0 1000 1000");
     return;
   }
 
-  const points = group.nodes
+  const routeNodes = group.nodes
     .map((step) => state.allNodes.find((node) => node.uid === step.uid))
-    .filter(Boolean)
+    .filter(Boolean);
+
+  const points = routeNodes
     .map((node) => `${node.raw?.x ?? node.x},${node.raw?.y ?? node.y}`)
     .join(" ");
 
   els.routeMapLabel.textContent = `${group.buildingLabel} · Floor ${group.floorLevel}`;
-els.routePolyline.setAttribute("points", points);
+  els.routePolyline.setAttribute("points", points);
 
-const routeNodes = group.nodes
-  .map((step) => state.allNodes.find((node) => node.uid === step.uid))
-  .filter(Boolean);
+  const loader = new Image();
+  loader.onload = () => {
+    const width = loader.naturalWidth || 1000;
+    const height = loader.naturalHeight || 1000;
 
-if (routeNodes.length) {
-  const xs = routeNodes.map((node) => node.raw?.x ?? node.x);
-  const ys = routeNodes.map((node) => node.raw?.y ?? node.y);
+    els.routeMapImage.setAttribute("href", imageSrc);
+    els.routeMapImage.setAttribute("x", "0");
+    els.routeMapImage.setAttribute("y", "0");
+    els.routeMapImage.setAttribute("width", String(width));
+    els.routeMapImage.setAttribute("height", String(height));
 
-  const minX = Math.min(...xs);
-  const maxX = Math.max(...xs);
-  const minY = Math.min(...ys);
-  const maxY = Math.max(...ys);
+    if (!routeNodes.length) {
+      els.routeMapOverlay.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      return;
+    }
 
-  const pad = 120;
-  const viewX = Math.max(0, minX - pad);
-  const viewY = Math.max(0, minY - pad);
-  const viewW = (maxX - minX) + pad * 2;
-  const viewH = (maxY - minY) + pad * 2;
+if (group.buildingKey !== "campus") {
+  els.routeMapOverlay.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  return;
+}
 
-  els.routeMapOverlay.setAttribute("viewBox", `${viewX} ${viewY} ${viewW} ${viewH}`);
-}  els.routeMapImage.style.display = "block";
+const xs = routeNodes.map((node) => node.raw?.x ?? node.x);
+const ys = routeNodes.map((node) => node.raw?.y ?? node.y);
 
-  els.routeMapImage.onload = () => {
-    const width = els.routeMapImage.naturalWidth || 1000;
-    const height = els.routeMapImage.naturalHeight || 1000;
-    els.routeMapOverlay.setAttribute("viewBox", `0 0 ${width} ${height}`);
+const minX = Math.min(...xs);
+const maxX = Math.max(...xs);
+const minY = Math.min(...ys);
+const maxY = Math.max(...ys);
+
+const pad = 120;
+const viewX = Math.max(0, minX - pad);
+const viewY = Math.max(0, minY - pad);
+const viewMaxX = Math.min(width, maxX + pad);
+const viewMaxY = Math.min(height, maxY + pad);
+const viewW = Math.max(200, viewMaxX - viewX);
+const viewH = Math.max(200, viewMaxY - viewY);
+
+els.routeMapOverlay.setAttribute("viewBox", `${viewX} ${viewY} ${viewW} ${viewH}`);
   };
 
-  els.routeMapImage.src = imageSrc;
+  loader.onerror = () => {
+    els.routeMapImage.setAttribute("href", imageSrc);
+    els.routeMapImage.setAttribute("width", "1000");
+    els.routeMapImage.setAttribute("height", "1000");
+    els.routeMapOverlay.setAttribute("viewBox", "0 0 1000 1000");
+  };
+
+  loader.src = imageSrc;
 }
 
 function getRouteFloorGroups(path) {
