@@ -83,9 +83,10 @@ For example, this example will be in ~/Downloads.
     </div>
 
     <div class="hint">
-      Holt: <span class="mono">135@holt</span>, <span class="mono">277@holt</span>, <span class="mono">Entrance 6@1</span>, <span class="mono">135@1</span>, <span class="mono">277@2</span><br>
+      Holt: <span class="mono">135@holt</span>, <span class="mono">277@holt</span>, <span class="mono">135@1</span>, <span class="mono">277@2</span><br>
       O'Connell: <span class="mono">200@oconnell</span>, <span class="mono">North Entrance@11</span>, <span class="mono">South Entrance@11</span><br>
-      Building names: <span class="mono">holt</span>, <span class="mono">oconnell</span>, <span class="mono">oc</span> &nbsp;|&nbsp; Floor numbers: <span class="mono">@1</span>–<span class="mono">@3</span> (Holt), <span class="mono">@11</span>–<span class="mono">@14</span> (O'Connell)<br>
+      Plumas: <span class="mono">100@plumas</span>, <span class="mono">Entrance 1@21</span><br>
+      Building names: <span class="mono">holt</span>, <span class="mono">oconnell</span> / <span class="mono">oc</span>, <span class="mono">plumas</span> &nbsp;|&nbsp; Floor numbers: <span class="mono">@1</span>–<span class="mono">@3</span> (Holt), <span class="mono">@11</span>–<span class="mono">@14</span> (O'Connell), <span class="mono">@21</span>–<span class="mono">@23</span> (Plumas)<br>
       Optimized version: A* solves first, then animates the final route.
     </div>
   </div>
@@ -109,7 +110,10 @@ For example, this example will be in ~/Downloads.
       "Entrance 7": "osm-node-10123224954",
       "Entrance 8": "osm-node-10123224954",
       "South Entrance": "osm-node-7706177462",
-      "North Entrance": "osm-node-12217284210"
+      "North Entrance": "osm-node-12217284210",
+      "Entrance 1": "osm-node-5862340455",
+      "Entrance 2": "osm-node-12058464553",
+      "Entrance 3": "osm-node-5849825672"
     };
 
     const statusEl = document.getElementById("status");
@@ -167,15 +171,17 @@ For example, this example will be in ~/Downloads.
       "holt":      "holt",
       "oconnell":  "building-oconnel",
       "o'connell": "building-oconnel",
-      "oc":        "building-oconnel"
+      "oc":        "building-oconnel",
+      "plumas":    "building-plumas"
     };
 
-    // O'Connell floors are offset by 10 (11-14); Holt floors are 1-3.
+    // O'Connell floors are offset by 10 (11-14); Plumas by 20 (21-23); Holt floors are 1-3.
     // This lets us filter by building when the user types e.g. "200@oconnell".
     function floorLevelsForBuilding(buildingId) {
       const normalized = String(buildingId || "").toLowerCase();
       if (normalized === "holt") return [1, 2, 3];
       if (normalized === "building-oconnel") return [11, 12, 13, 14];
+      if (normalized === "building-plumas") return [21, 22, 23];
       return null; // unknown — no filter
     }
 
@@ -634,7 +640,10 @@ For example, this example will be in ~/Downloads.
         11: oconnellScale,
         12: oconnellScale,
         13: oconnellScale,
-        14: oconnellScale
+        14: oconnellScale,
+        21: 1.0,
+        22: 1.0,
+        23: 1.0
       };
 
       const rawNodes = [];
@@ -672,10 +681,12 @@ For example, this example will be in ~/Downloads.
       const campusRaw   = rawNodes.filter(n => n.floorLevel === 0);
       const holtRaw     = rawNodes.filter(n => n.floorLevel >= 1  && n.floorLevel <= 3);
       const oconnellRaw = rawNodes.filter(n => n.floorLevel >= 11 && n.floorLevel <= 14);
+      const plumasRaw   = rawNodes.filter(n => n.floorLevel >= 21 && n.floorLevel <= 23);
 
       const campusCentroid   = centroidFor(campusRaw);
       const holtCentroid     = centroidFor(holtRaw);
       const oconnellCentroid = centroidFor(oconnellRaw);
+      const plumasCentroid   = centroidFor(plumasRaw);
 
       allNodes = rawNodes.map(n => {
         const scale = FLOOR_SCALES[n.floorLevel] ?? 1.0;
@@ -683,6 +694,7 @@ For example, this example will be in ~/Downloads.
         if (n.floorLevel === 0)                              c = campusCentroid;
         else if (n.floorLevel >= 1  && n.floorLevel <= 3)   c = holtCentroid;
         else if (n.floorLevel >= 11 && n.floorLevel <= 14)  c = oconnellCentroid;
+        else if (n.floorLevel >= 21 && n.floorLevel <= 23)  c = plumasCentroid;
         else                                                  c = holtCentroid;
         return {
           ...n,
@@ -715,8 +727,9 @@ For example, this example will be in ~/Downloads.
       // Holt: floors 1,2,3 | O'Connell: floors 11,12,13,14
       const holtFloors = floors.filter(f => f.floorLevel >= 1 && f.floorLevel <= 3);
       const oconnellFloors = floors.filter(f => f.floorLevel >= 11 && f.floorLevel <= 14);
+      const plumasFloors = floors.filter(f => f.floorLevel >= 21 && f.floorLevel <= 23);
 
-      for (const buildingFloors of [holtFloors, oconnellFloors]) {
+      for (const buildingFloors of [holtFloors, oconnellFloors, plumasFloors]) {
         for (let i = 0; i < buildingFloors.length - 1; i++) {
           const low = allNodes.filter(n => n.floorLevel === buildingFloors[i].floorLevel && n.kind === "transition");
           const high = allNodes.filter(n => n.floorLevel === buildingFloors[i + 1].floorLevel && n.kind === "transition");
@@ -732,18 +745,16 @@ For example, this example will be in ~/Downloads.
       for (let i = 0; i < portals.length; i++) {
         for (let j = i + 1; j < portals.length; j++) {
           if (portals[i].floorLevel === portals[j].floorLevel) continue;
-          // Only connect portals within the same building (same floor range)
-          const iHolt = portals[i].floorLevel <= 3;
-          const jHolt = portals[j].floorLevel <= 3;
-          if (iHolt !== jHolt) continue;
+          // Only connect portals within the same building
+          const buildingOf = fl => fl <= 3 ? "holt" : fl <= 14 ? "oconnell" : "plumas";
+          if (buildingOf(portals[i].floorLevel) !== buildingOf(portals[j].floorLevel)) continue;
           elevatorEdges.push({ from: portals[i].uid, to: portals[j].uid });
           addAdjEdge(portals[i].uid, portals[j].uid, ELEVATOR_COST, "elevator", true);
         }
       }
 
       // Connect ground-floor entrances of ALL buildings directly to their campus OSM node.
-      // Holt ground floor = floorLevel 1; O'Connell ground floor = floorLevel 11.
-      const buildingGroundFloors = [1, 11];
+      const buildingGroundFloors = [1, 11, 21];
       const campusNodes = allNodes.filter(n => n.floorLevel === 0);
 
       for (const groundLevel of buildingGroundFloors) {
@@ -799,12 +810,12 @@ For example, this example will be in ~/Downloads.
       baseEntryTrace = buildLineTrace(entryEdges, "entry links", "black", 5);
 
       statusEl.textContent =
-        `Loaded ${allNodes.length} nodes across ${floors.length} floors (2 buildings). Campus scale=${campusScale.toFixed(2)}x, O'Connell scale=${oconnellScale.toFixed(2)}x. Walkways=${walkwayEdges.length}, stairs=${stairEdges.length}, elevators=${elevatorEdges.length}, entry-links=${entryEdges.length}`;
+        `Loaded ${allNodes.length} nodes across ${floors.length} floors (3 buildings). Campus scale=${campusScale.toFixed(2)}x, O'Connell scale=${oconnellScale.toFixed(2)}x. Walkways=${walkwayEdges.length}, stairs=${stairEdges.length}, elevators=${elevatorEdges.length}, entry-links=${entryEdges.length}`;
     }
 
     async function init() {
       try {
-        const [campus, holt1, holt2, holt3, oc1, oc2, oc3, oc4] = await Promise.all([
+        const [campus, holt1, holt2, holt3, oc1, oc2, oc3, oc4, pl1, pl2, pl3] = await Promise.all([
           fetch("./campus-graph-map-editor.json").then(r => r.json()),
           fetch("./holt-floor-1.json").then(r => r.json()),
           fetch("./holt-floor-2.json").then(r => r.json()),
@@ -812,17 +823,24 @@ For example, this example will be in ~/Downloads.
           fetch("./oconnell1.json").then(r => r.json()),
           fetch("./oconnell2.json").then(r => r.json()),
           fetch("./oconnell3.json").then(r => r.json()),
-          fetch("./oconnell4.json").then(r => r.json())
+          fetch("./oconnell4.json").then(r => r.json()),
+          fetch("./plumas1.json").then(r => r.json()),
+          fetch("./plumas2.json").then(r => r.json()),
+          fetch("./plumas3.json").then(r => r.json())
         ]);
 
-        // Tag O'Connell files with a floor offset of 10 so their floors
-        // become 11, 12, 13, 14 — avoiding collision with Holt (1, 2, 3).
+        // O'Connell floors offset by 10 → 11-14
         oc1._floorOffset = 10;
         oc2._floorOffset = 10;
         oc3._floorOffset = 10;
         oc4._floorOffset = 10;
 
-        buildCombinedGraph([campus, holt1, holt2, holt3, oc1, oc2, oc3, oc4]);
+        // Plumas floors offset by 20 → 21-23
+        pl1._floorOffset = 20;
+        pl2._floorOffset = 20;
+        pl3._floorOffset = 20;
+
+        buildCombinedGraph([campus, holt1, holt2, holt3, oc1, oc2, oc3, oc4, pl1, pl2, pl3]);
         renderFast();
       } catch (err) {
         console.error(err);
