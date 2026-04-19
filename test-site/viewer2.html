@@ -1,0 +1,870 @@
+<!-- 
+INSTRUCTIONS TO RUN:
+
+1. Move all building_{1...n-1} into the same directory as this file (viewer.html). 
+For example, this example will be in ~/Downloads.
+2. cd ~/Downloads
+3. python3 -m http.server 8000
+4. Go on browser and open: http://localhost:8000/viewer.html?v=8
+5. Test different options for start/finish.
+-->
+
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Holt + O'Connell + Campus Viewer</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    html, body, #plot {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    #info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      background: rgba(255,255,255,0.97);
+      border: 1px solid #ccc;
+      padding: 10px 12px;
+      max-width: 700px;
+      line-height: 1.35;
+    }
+    #controls {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 6px 8px;
+      align-items: center;
+    }
+    input, button {
+      font: inherit;
+      padding: 6px 8px;
+    }
+    button {
+      cursor: pointer;
+    }
+    .row {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .hint {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #444;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div id="info">
+    <div><strong>Holt + O'Connell combined graph with campus floor 0</strong></div>
+    <div id="status">Loading…</div>
+
+    <div id="controls">
+      <label for="startInput">Start</label>
+      <input id="startInput" value="Entrance 6 Outside">
+
+      <label for="goalInput">Goal</label>
+      <input id="goalInput" value="277@2">
+    </div>
+
+    <div class="row">
+      <button id="runBtn">Run A*</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <div class="hint">
+      Holt: <span class="mono">135@holt</span>, <span class="mono">277@holt</span>, <span class="mono">135@1</span>, <span class="mono">277@2</span><br>
+      O'Connell: <span class="mono">200@oconnell</span>, <span class="mono">North Entrance@11</span>, <span class="mono">South Entrance@11</span><br>
+      Plumas: <span class="mono">100@plumas</span>, <span class="mono">Entrance 1@21</span><br>
+      Building names: <span class="mono">holt</span>, <span class="mono">oconnell</span> / <span class="mono">oc</span>, <span class="mono">plumas</span> &nbsp;|&nbsp; Floor numbers: <span class="mono">@1</span>–<span class="mono">@3</span> (Holt), <span class="mono">@11</span>–<span class="mono">@14</span> (O'Connell), <span class="mono">@21</span>–<span class="mono">@23</span> (Plumas)<br>
+      Optimized version: A* solves first, then animates the final route.
+    </div>
+  </div>
+
+  <div id="plot"></div>
+
+  <script>
+    const FLOOR_GAP = 220;
+    const STAIR_COST = 6.0;
+    const ELEVATOR_COST = 4.0;
+    const ANIMATION_DELAY_MS = 120;
+    const EXTERIOR_TO_BUILDING_COST = 1.0;
+
+    const MANUAL_ENTRANCE_BINDINGS = {
+        //holt entrances
+      "Entrance 1": "osm-node-5861595676",
+      "Entrance 2": "osm-node-5863721909",
+      "Entrance 3": "osm-node-5861595671",
+      "Entrance 4": "osm-node-12057911483",
+      "Entrance 5": "osm-node-12016281847",
+      "Entrance 6": "osm-node-12016281847",
+      "Entrance 7": "osm-node-10123224954",
+      "Entrance 8": "osm-node-10123224954",
+
+        //oconnell entrances
+      "South Entrance": "osm-node-7706177462",
+      "North Entrance": "osm-node-12217284210",
+
+        //plumas entrances
+      "Plumas:Entrance 1": "osm-node-5862340455",
+      "Plumas:Entrance 2": "osm-node-12058464553",
+      "Plumas:Entrance 3": "osm-node-5849825672"
+    };
+
+    const statusEl = document.getElementById("status");
+    const startInput = document.getElementById("startInput");
+    const goalInput = document.getElementById("goalInput");
+    const runBtn = document.getElementById("runBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    let floors = [];
+    let allNodes = [];
+    let nodeMap = new Map();
+    let adjacency = new Map();
+
+    let currentStartId = null;
+    let currentGoalId = null;
+    let animationToken = 0;
+
+    let baseNodeTrace = null;
+    let baseWalkwayTrace = null;
+    let baseStairTrace = null;
+    let baseElevatorTrace = null;
+    let baseEntryTrace = null;
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function normalizeText(s) {
+      return String(s || "").trim().toLowerCase();
+    }
+
+    function colorForKind(kind) {
+      switch (kind) {
+        case "entrance": return "green";
+        case "destination": return "red";
+        case "junction": return "purple";
+        case "anchor": return "gray";
+        case "portal": return "cyan";
+        case "transition": return "gold";
+        default: return "blue";
+      }
+    }
+
+    function visualZForFloor(floorLevel) {
+      return floorLevel * FLOOR_GAP;
+    }
+
+    function namespacedId(floorLevel, nodeId) {
+      return `${floorLevel}:${nodeId}`;
+    }
+
+    // Maps building name aliases to the buildingId values used in the JSON files.
+    // Keys are lowercase; add more as needed.
+    const BUILDING_ID_MAP = {
+      "holt":      "holt",
+      "oconnell":  "building-oconnel",
+      "o'connell": "building-oconnel",
+      "oc":        "building-oconnel",
+      "plumas":    "building-plumas"
+    };
+
+    // O'Connell floors are offset by 10 (11-14); Plumas by 20 (21-23); Holt floors are 1-3.
+    // This lets us filter by building when the user types e.g. "200@oconnell".
+    function floorLevelsForBuilding(buildingId) {
+      const normalized = String(buildingId || "").toLowerCase();
+      if (normalized === "holt") return [1, 2, 3];
+      if (normalized === "building-oconnel") return [11, 12, 13, 14];
+      if (normalized === "building-plumas") return [21, 22, 23];
+      return null; // unknown — no filter
+    }
+
+    function parseLookup(text) {
+      const raw = String(text || "").trim();
+
+      // Support "query@building" e.g. "200@oconnell" or "200@holt"
+      // Also still support "query@floorNumber" e.g. "277@2"
+      const m = raw.match(/^(.*?)(?:@(.+))?$/);
+      const queryPart = m ? m[1] : raw;
+      const atPart = m && m[2] ? m[2].trim() : null;
+
+      const floorNum = atPart && /^\d+$/.test(atPart) ? Number(atPart) : null;
+      const buildingKey = atPart && !floorNum ? normalizeText(atPart) : null;
+      const buildingId = buildingKey ? (BUILDING_ID_MAP[buildingKey] ?? null) : null;
+
+      return {
+        query: normalizeText(queryPart),
+        floor: floorNum,
+        buildingId: buildingId
+      };
+    }
+
+    function nodeKeys(node) {
+      const keys = new Set();
+
+      keys.add(normalizeText(node.label));
+      keys.add(normalizeText(node.id));
+      keys.add(normalizeText(node.uid));
+
+      if (node.roomNumber != null) keys.add(normalizeText(node.roomNumber));
+
+      if (Array.isArray(node.aliases)) {
+        for (const a of node.aliases) keys.add(normalizeText(a));
+      }
+
+      if (node.label) keys.add(`${normalizeText(node.label)}@${node.floorLevel}`);
+      if (node.roomNumber != null) keys.add(`${normalizeText(node.roomNumber)}@${node.floorLevel}`);
+
+      return [...keys].filter(Boolean);
+    }
+
+    function findNodeByInput(text) {
+      const lookup = parseLookup(text);
+      const q = lookup.query;
+      if (!q) return null;
+
+      const buildingFloors = lookup.buildingId ? floorLevelsForBuilding(lookup.buildingId) : null;
+
+      function matchesFilters(n) {
+        if (lookup.floor != null && n.floorLevel !== lookup.floor) return false;
+        if (buildingFloors && !buildingFloors.includes(n.floorLevel)) return false;
+        return true;
+      }
+
+      let candidates = allNodes.filter(n => {
+        if (!matchesFilters(n)) return false;
+        return nodeKeys(n).includes(q) || nodeKeys(n).includes(`${q}@${n.floorLevel}`);
+      });
+
+      if (candidates.length === 1) return candidates[0];
+      if (candidates.length > 1) {
+        const exactLabel = candidates.find(n => normalizeText(n.label) === q);
+        if (exactLabel) return exactLabel;
+        const exactRoom = candidates.find(n => normalizeText(n.roomNumber) === q);
+        if (exactRoom) return exactRoom;
+        return candidates[0];
+      }
+
+      candidates = allNodes.filter(n => {
+        if (!matchesFilters(n)) return false;
+        return nodeKeys(n).some(k => k.includes(q));
+      });
+
+      return candidates[0] || null;
+    }
+
+    function addAdjEdge(fromId, toId, cost, kind, bidirectional = true) {
+      if (!adjacency.has(fromId)) adjacency.set(fromId, []);
+      adjacency.get(fromId).push({ to: toId, cost, kind });
+
+      if (bidirectional) {
+        if (!adjacency.has(toId)) adjacency.set(toId, []);
+        adjacency.get(toId).push({ to: fromId, cost, kind });
+      }
+    }
+
+    function addSyntheticNode(node) {
+      allNodes.push(node);
+      nodeMap.set(node.uid, node);
+      adjacency.set(node.uid, []);
+    }
+
+    function distanceScaled(a, b) {
+      const dx = a.x - b.x;
+      const dy = a.y - b.y;
+      return Math.hypot(dx, dy);
+    }
+
+    function pairNearestTransitions(lowerFloorNodes, upperFloorNodes) {
+      const pairs = [];
+      const usedUpper = new Set();
+
+      for (const a of lowerFloorNodes) {
+        let bestIndex = -1;
+        let bestDist = Infinity;
+
+        for (let i = 0; i < upperFloorNodes.length; i++) {
+          if (usedUpper.has(i)) continue;
+          const b = upperFloorNodes[i];
+          const dx = a.raw.x - b.raw.x;
+          const dy = a.raw.y - b.raw.y;
+          const d = Math.hypot(dx, dy);
+          if (d < bestDist) {
+            bestDist = d;
+            bestIndex = i;
+          }
+        }
+
+        if (bestIndex >= 0) {
+          usedUpper.add(bestIndex);
+          pairs.push([a, upperFloorNodes[bestIndex]]);
+        }
+      }
+
+      return pairs;
+    }
+
+    function heuristic(aId, bId) {
+      const a = nodeMap.get(aId);
+      const b = nodeMap.get(bId);
+
+      const dx = a.raw.x - b.raw.x;
+      const dy = a.raw.y - b.raw.y;
+      const ppm = a.pixelsPerMeter || 50;
+      const planarMeters = Math.hypot(dx, dy) / ppm;
+      const floorPenalty = Math.abs(a.floorLevel - b.floorLevel) * Math.min(STAIR_COST, ELEVATOR_COST);
+
+      return planarMeters + floorPenalty;
+    }
+
+    function reconstructPath(cameFrom, current) {
+      const path = [current];
+      while (cameFrom.has(current)) {
+        current = cameFrom.get(current);
+        path.push(current);
+      }
+      return path.reverse();
+    }
+
+    function makeScatterForIds(name, ids, color, size) {
+      if (!ids.length) {
+        return {
+          type: "scatter3d",
+          mode: "markers",
+          name,
+          x: [],
+          y: [],
+          z: [],
+          hoverinfo: "none",
+          marker: { size, color }
+        };
+      }
+
+      return {
+        type: "scatter3d",
+        mode: "markers",
+        name,
+        x: ids.map(id => nodeMap.get(id).x),
+        y: ids.map(id => nodeMap.get(id).y),
+        z: ids.map(id => nodeMap.get(id).z),
+        text: ids.map(id => {
+          const n = nodeMap.get(id);
+          return `${n.label || n.id} @ floor ${n.floorLevel} [${n.kind}]`;
+        }),
+        hoverinfo: "text",
+        marker: { size, color }
+      };
+    }
+
+    function makePathTrace(pathIds, name, color, width) {
+      return {
+        type: "scatter3d",
+        mode: "lines+markers",
+        name,
+        x: pathIds.map(id => nodeMap.get(id).x),
+        y: pathIds.map(id => nodeMap.get(id).y),
+        z: pathIds.map(id => nodeMap.get(id).z),
+        hoverinfo: "none",
+        line: { color, width },
+        marker: { color, size: 5 }
+      };
+    }
+
+    function buildLineTrace(edges, name, color, width) {
+      const x = [], y = [], z = [];
+      for (const e of edges) {
+        const a = nodeMap.get(e.from);
+        const b = nodeMap.get(e.to);
+        if (!a || !b) continue;
+        x.push(a.x, b.x, null);
+        y.push(a.y, b.y, null);
+        z.push(a.z, b.z, null);
+      }
+      return {
+        type: "scatter3d",
+        mode: "lines",
+        name,
+        x, y, z,
+        hoverinfo: "none",
+        line: { color, width }
+      };
+    }
+
+    function renderFast(currentId = null, pathIds = []) {
+      const traces = [
+        baseWalkwayTrace,
+        baseStairTrace,
+        baseElevatorTrace,
+        baseEntryTrace,
+        baseNodeTrace,
+        makeScatterForIds("start", currentStartId ? [currentStartId] : [], "lime", 10),
+        makeScatterForIds("goal", currentGoalId ? [currentGoalId] : [], "red", 10),
+        makeScatterForIds("current", currentId ? [currentId] : [], "black", 11),
+        makePathTrace(pathIds, "path", "magenta", 8)
+      ];
+
+      Plotly.react("plot", traces, {
+        margin: { l: 0, r: 0, t: 0, b: 0 },
+        scene: {
+          aspectmode: "data",
+          camera: { eye: { x: 1.5, y: -1.7, z: 1.2 } }
+        },
+        legend: { x: 0.01, y: 0.99 }
+      }, { responsive: true });
+    }
+
+    function downloadJSON(filename, data) {
+      const blob = new Blob([JSON.stringify(data, null, 2)], {
+        type: "application/json"
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function animatePath(pathIds) {
+      const token = ++animationToken;
+
+      for (let i = 0; i < pathIds.length; i++) {
+        if (token !== animationToken) return;
+
+        const currentId = pathIds[i];
+        const currentNode = nodeMap.get(currentId);
+        const shownPath = pathIds.slice(0, i + 1);
+
+        statusEl.textContent =
+          `Navigating: ${currentNode.label || currentNode.id} on floor ${currentNode.floorLevel} | step ${i + 1}/${pathIds.length}`;
+
+        renderFast(currentId, shownPath);
+        await sleep(ANIMATION_DELAY_MS);
+      }
+
+      const finalNode = nodeMap.get(pathIds[pathIds.length - 1]);
+      statusEl.textContent =
+        `Arrived: ${finalNode.label || finalNode.id} on floor ${finalNode.floorLevel}`;
+    }
+
+    class MinHeap {
+      constructor() {
+        this.data = [];
+      }
+
+      push(item) {
+        this.data.push(item);
+        this.bubbleUp(this.data.length - 1);
+      }
+
+      pop() {
+        if (this.data.length === 0) return null;
+        const top = this.data[0];
+        const end = this.data.pop();
+        if (this.data.length > 0) {
+          this.data[0] = end;
+          this.bubbleDown(0);
+        }
+        return top;
+      }
+
+      bubbleUp(index) {
+        while (index > 0) {
+          const parent = Math.floor((index - 1) / 2);
+          if (this.data[parent].priority <= this.data[index].priority) break;
+          [this.data[parent], this.data[index]] = [this.data[index], this.data[parent]];
+          index = parent;
+        }
+      }
+
+      bubbleDown(index) {
+        const length = this.data.length;
+        while (true) {
+          let left = index * 2 + 1;
+          let right = index * 2 + 2;
+          let smallest = index;
+
+          if (left < length && this.data[left].priority < this.data[smallest].priority) {
+            smallest = left;
+          }
+          if (right < length && this.data[right].priority < this.data[smallest].priority) {
+            smallest = right;
+          }
+          if (smallest === index) break;
+
+          [this.data[index], this.data[smallest]] = [this.data[smallest], this.data[index]];
+          index = smallest;
+        }
+      }
+    }
+
+    async function runAStar() {
+      animationToken++;
+
+      const startNode = findNodeByInput(startInput.value);
+      const goalNode = findNodeByInput(goalInput.value);
+
+      if (!startNode || !goalNode) {
+        statusEl.textContent = "Start or goal not found. Try Entrance 6 Outside, 135, 277@2, Entrance 8@1, Portal 1@2.";
+        return;
+      }
+
+      currentStartId = startNode.uid;
+      currentGoalId = goalNode.uid;
+
+      statusEl.textContent = "Solving route…";
+      renderFast();
+
+      // Let UI paint once before heavy work
+      await sleep(0);
+
+      const cameFrom = new Map();
+      const gScore = new Map();
+      const fScore = new Map();
+      const closedSet = new Set();
+      const openSet = new Set();
+      const heap = new MinHeap();
+
+      for (const n of allNodes) {
+        gScore.set(n.uid, Infinity);
+        fScore.set(n.uid, Infinity);
+      }
+
+      gScore.set(currentStartId, 0);
+      fScore.set(currentStartId, heuristic(currentStartId, currentGoalId));
+      openSet.add(currentStartId);
+      heap.push({ id: currentStartId, priority: fScore.get(currentStartId) });
+
+      while (true) {
+        let popped = heap.pop();
+        while (popped && closedSet.has(popped.id)) {
+          popped = heap.pop();
+        }
+        if (!popped) break;
+
+        const current = popped.id;
+        if (!openSet.has(current)) continue;
+
+        if (current === currentGoalId) {
+          const finalPath = reconstructPath(cameFrom, current);
+
+          const routeText = finalPath.map(id => {
+            const n = nodeMap.get(id);
+            return `${n.label || n.id}@${n.floorLevel}`;
+          }).join(" -> ");
+
+          const pathData = finalPath.map(id => {
+            const n = nodeMap.get(id);
+            return {
+              uid: n.uid,
+              id: n.id,
+              label: n.label || n.id,
+              floor: n.floorLevel,
+              kind: n.kind,
+              x: n.x,
+              y: n.y,
+              z: n.z
+            };
+          });
+
+          downloadJSON("route.json", pathData);
+
+          statusEl.textContent = `Done. Cost=${gScore.get(currentGoalId).toFixed(2)} | ${routeText}`;
+          renderFast(current, finalPath);
+
+
+          //await animatePath(finalPath);
+
+          return;
+        }
+
+        openSet.delete(current);
+        closedSet.add(current);
+
+        for (const edge of adjacency.get(current) || []) {
+          if (closedSet.has(edge.to)) continue;
+
+          const tentativeG = gScore.get(current) + edge.cost;
+
+          if (tentativeG < gScore.get(edge.to)) {
+            cameFrom.set(edge.to, current);
+            gScore.set(edge.to, tentativeG);
+
+            const newF = tentativeG + heuristic(edge.to, currentGoalId);
+            fScore.set(edge.to, newF);
+
+            openSet.add(edge.to);
+            heap.push({ id: edge.to, priority: newF });
+          }
+        }
+      }
+
+      statusEl.textContent = "No path found.";
+      renderFast();
+    }
+
+    // Files tagged with a floorOffset are remapped: floorLevel += floorOffset.
+    // This prevents Holt floors (0-3) from colliding with O'Connell floors (11-14).
+    function buildCombinedGraph(files) {
+      floors = files.map(d => {
+        const rawLevel = d.project?.floorLevel ?? 1;
+        const offset = d._floorOffset ?? 0;
+        return {
+          data: d,
+          floorLevel: rawLevel + offset,
+          rawFloorLevel: rawLevel,
+          pixelsPerMeter: d.calibration?.pixelsPerMeter || 50
+        };
+      }).sort((a, b) => a.floorLevel - b.floorLevel);
+
+      const floorByLevel = new Map(floors.map(f => [f.floorLevel, f]));
+      const holtPPM = floorByLevel.get(1)?.pixelsPerMeter || 16.41385;
+      const campusPPM = floorByLevel.get(0)?.pixelsPerMeter || 1.28326;
+      const campusScale = holtPPM / campusPPM;
+
+      // O'Connell floor 1 PPM vs Holt floor 1 PPM
+      const oconnellPPM = floorByLevel.get(11)?.pixelsPerMeter || 21.88513;
+      const oconnellScale = holtPPM / oconnellPPM;
+
+      const FLOOR_SCALES = {
+        0: campusScale,
+        1: 1.0,
+        2: 1.0,
+        3: 1.0,
+        11: oconnellScale,
+        12: oconnellScale,
+        13: oconnellScale,
+        14: oconnellScale,
+        21: 1.0,
+        22: 1.0,
+        23: 1.0
+      };
+
+      const rawNodes = [];
+      const walkwayEdges = [];
+      const stairEdges = [];
+      const elevatorEdges = [];
+      const entryEdges = [];
+
+      for (const floor of floors) {
+        const buildingId = floor.data.project?.buildingId ?? null;
+        for (const n of floor.data.nodes || []) {
+          rawNodes.push({
+            ...n,
+            uid: namespacedId(floor.floorLevel, n.id),
+            floorLevel: floor.floorLevel,
+            pixelsPerMeter: floor.pixelsPerMeter,
+            buildingId: buildingId
+          });
+        }
+      }
+
+      // Compute per-building centroids so each building is centered on itself,
+      // then the campus (floor 0) gets its own centroid too.
+      // Buildings are identified by their floor ranges.
+      function centroidFor(nodes) {
+        if (!nodes.length) return { cx: 0, cy: 0 };
+        const xs = nodes.map(n => n.x);
+        const ys = nodes.map(n => n.y);
+        return {
+          cx: (Math.min(...xs) + Math.max(...xs)) / 2,
+          cy: (Math.min(...ys) + Math.max(...ys)) / 2
+        };
+      }
+
+      const campusRaw   = rawNodes.filter(n => n.floorLevel === 0);
+      const holtRaw     = rawNodes.filter(n => n.floorLevel >= 1  && n.floorLevel <= 3);
+      const oconnellRaw = rawNodes.filter(n => n.floorLevel >= 11 && n.floorLevel <= 14);
+      const plumasRaw   = rawNodes.filter(n => n.floorLevel >= 21 && n.floorLevel <= 23);
+
+      const campusCentroid   = centroidFor(campusRaw);
+      const holtCentroid     = centroidFor(holtRaw);
+      const oconnellCentroid = centroidFor(oconnellRaw);
+      const plumasCentroid   = centroidFor(plumasRaw);
+
+      allNodes = rawNodes.map(n => {
+        const scale = FLOOR_SCALES[n.floorLevel] ?? 1.0;
+        let c;
+        if (n.floorLevel === 0)                              c = campusCentroid;
+        else if (n.floorLevel >= 1  && n.floorLevel <= 3)   c = holtCentroid;
+        else if (n.floorLevel >= 11 && n.floorLevel <= 14)  c = oconnellCentroid;
+        else if (n.floorLevel >= 21 && n.floorLevel <= 23)  c = plumasCentroid;
+        else                                                  c = holtCentroid;
+        return {
+          ...n,
+          raw: { x: n.x, y: n.y },
+          x: (n.x - c.cx) * scale,
+          y: -(n.y - c.cy) * scale,
+          z: visualZForFloor(n.floorLevel)
+        };
+      });
+
+      nodeMap = new Map();
+      adjacency = new Map();
+
+      for (const n of allNodes) {
+        nodeMap.set(n.uid, n);
+        adjacency.set(n.uid, []);
+      }
+
+      for (const floor of floors) {
+        for (const e of floor.data.edges || []) {
+          const from = namespacedId(floor.floorLevel, e.from);
+          const to = namespacedId(floor.floorLevel, e.to);
+          const cost = Number.isFinite(e.lengthMeters) ? e.lengthMeters : 1.0;
+          walkwayEdges.push({ from, to });
+          addAdjEdge(from, to, cost, "walkway", !!e.bidirectional);
+        }
+      }
+
+      // Only pair transitions between consecutive floors of the SAME building.
+      // Holt: floors 1,2,3 | O'Connell: floors 11,12,13,14
+      const holtFloors = floors.filter(f => f.floorLevel >= 1 && f.floorLevel <= 3);
+      const oconnellFloors = floors.filter(f => f.floorLevel >= 11 && f.floorLevel <= 14);
+      const plumasFloors = floors.filter(f => f.floorLevel >= 21 && f.floorLevel <= 23);
+
+      for (const buildingFloors of [holtFloors, oconnellFloors, plumasFloors]) {
+        for (let i = 0; i < buildingFloors.length - 1; i++) {
+          const low = allNodes.filter(n => n.floorLevel === buildingFloors[i].floorLevel && n.kind === "transition");
+          const high = allNodes.filter(n => n.floorLevel === buildingFloors[i + 1].floorLevel && n.kind === "transition");
+
+          for (const [a, b] of pairNearestTransitions(low, high)) {
+            stairEdges.push({ from: a.uid, to: b.uid });
+            addAdjEdge(a.uid, b.uid, STAIR_COST, "stairs", true);
+          }
+        }
+      }
+
+      const portals = allNodes.filter(n => n.kind === "portal");
+      for (let i = 0; i < portals.length; i++) {
+        for (let j = i + 1; j < portals.length; j++) {
+          if (portals[i].floorLevel === portals[j].floorLevel) continue;
+          // Only connect portals within the same building
+          const buildingOf = fl => fl <= 3 ? "holt" : fl <= 14 ? "oconnell" : "plumas";
+          if (buildingOf(portals[i].floorLevel) !== buildingOf(portals[j].floorLevel)) continue;
+          elevatorEdges.push({ from: portals[i].uid, to: portals[j].uid });
+          addAdjEdge(portals[i].uid, portals[j].uid, ELEVATOR_COST, "elevator", true);
+        }
+      }
+
+      // Connect ground-floor entrances of ALL buildings directly to their campus OSM node.
+      const buildingGroundFloors = [1, 11, 21];
+      const campusNodes = allNodes.filter(n => n.floorLevel === 0);
+
+      for (const groundLevel of buildingGroundFloors) {
+        const groundEntrances = allNodes.filter(n => n.floorLevel === groundLevel && n.kind === "entrance");
+
+        for (const entrance of groundEntrances) {
+          let chosenCampus = null;
+
+          const manualCampusId = MANUAL_ENTRANCE_BINDINGS[entrance.label];
+          if (manualCampusId) {
+            const cleanId = String(manualCampusId).replace(/@0$/, "");
+            chosenCampus = allNodes.find(n => n.floorLevel === 0 && n.id === cleanId);
+          }
+
+          if (!chosenCampus) {
+            let bestDist = Infinity;
+            for (const campus of campusNodes) {
+              const d = distanceScaled(entrance, campus);
+              if (d < bestDist) {
+                bestDist = d;
+                chosenCampus = campus;
+              }
+            }
+          }
+
+          if (!chosenCampus) continue;
+
+          // Direct edge: campus OSM node <-> building entrance
+          addAdjEdge(chosenCampus.uid, entrance.uid, EXTERIOR_TO_BUILDING_COST, "building-entry", true);
+          entryEdges.push({ from: chosenCampus.uid, to: entrance.uid });
+        }
+      }
+
+      baseNodeTrace = {
+        type: "scatter3d",
+        mode: "markers",
+        name: "nodes",
+        x: allNodes.map(n => n.x),
+        y: allNodes.map(n => n.y),
+        z: allNodes.map(n => n.z),
+        text: allNodes.map(n => `${n.label || n.id} @ floor ${n.floorLevel} [${n.kind}]`),
+        hoverinfo: "text",
+        marker: {
+          size: 4,
+          color: allNodes.map(n => colorForKind(n.kind)),
+          opacity: 0.82
+        }
+      };
+
+      baseWalkwayTrace = buildLineTrace(walkwayEdges, "walkways", "lightgray", 3);
+      baseStairTrace = buildLineTrace(stairEdges, "stairs", "saddlebrown", 6);
+      baseElevatorTrace = buildLineTrace(elevatorEdges, "elevators", "teal", 6);
+      baseEntryTrace = buildLineTrace(entryEdges, "entry links", "black", 5);
+
+      statusEl.textContent =
+        `Loaded ${allNodes.length} nodes across ${floors.length} floors (3 buildings). Campus scale=${campusScale.toFixed(2)}x, O'Connell scale=${oconnellScale.toFixed(2)}x. Walkways=${walkwayEdges.length}, stairs=${stairEdges.length}, elevators=${elevatorEdges.length}, entry-links=${entryEdges.length}`;
+    }
+
+    async function init() {
+      try {
+        const [campus, holt1, holt2, holt3, oc1, oc2, oc3, oc4, pl1, pl2, pl3] = await Promise.all([
+fetch("../wayfinder-data/files/campus-graph-map-editor.json").then(r => r.json()),
+fetch("../wayfinder-data/files/holt-files/holt-floor-1.json").then(r => r.json()),
+fetch("../wayfinder-data/files/holt-files/holt-floor-2.json").then(r => r.json()),
+fetch("../wayfinder-data/files/holt-files/holt-floor-3.json").then(r => r.json()),
+fetch("../wayfinder-data/files/o'connell-files/oconnell1.json").then(r => r.json()),
+fetch("../wayfinder-data/files/o'connell-files/oconnell2.json").then(r => r.json()),
+fetch("../wayfinder-data/files/o'connell-files/oconnell3.json").then(r => r.json()),
+fetch("../wayfinder-data/files/o'connell-files/oconnell4.json").then(r => r.json()),
+fetch("../wayfinder-data/files/plumas-files/plumas1.json").then(r => r.json()),
+fetch("../wayfinder-data/files/plumas-files/plumas2.json").then(r => r.json()),
+fetch("../wayfinder-data/files/plumas-files/plumas3.json").then(r => r.json())
+        ]);
+
+        // O'Connell floors offset by 10 → 11-14
+        oc1._floorOffset = 10;
+        oc2._floorOffset = 10;
+        oc3._floorOffset = 10;
+        oc4._floorOffset = 10;
+
+        // Plumas floors offset by 20 → 21-23
+        pl1._floorOffset = 20;
+        pl2._floorOffset = 20;
+        pl3._floorOffset = 20;
+
+        buildCombinedGraph([campus, holt1, holt2, holt3, oc1, oc2, oc3, oc4, pl1, pl2, pl3]);
+        renderFast();
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = "FAILED: " + err.message;
+      }
+    }
+
+    runBtn.addEventListener("click", runAStar);
+
+    resetBtn.addEventListener("click", () => {
+      animationToken++;
+      currentStartId = null;
+      currentGoalId = null;
+      statusEl.textContent =
+        `Loaded ${allNodes.length} nodes across ${floors.length} floors. Ready.`;
+      renderFast();
+    });
+
+    init();
+  </script>
+</body>
+</html>

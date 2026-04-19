@@ -1,0 +1,108 @@
+{
+  "appTitle": "WildCat Wayfinder",
+  "classDataPath": "/wayfinder-data/files/chico_classes_p.json",
+  "campus": {
+    "id": "campus",
+    "label": "Campus",
+    "path": "/wayfinder-data/files/campus-graph-map-editor.json",
+    "floorLevelOverride": 0,
+    "buildingIdOverride": "campus",
+    "buildingLabelOverride": "Campus"
+  },
+  "buildings": [
+    {
+      "id": "holt",
+      "label": "Holt Hall",
+      "classCode": "HOLT",
+      "aliases": ["holt"],
+      "floors": [
+        {
+          "path": "/wayfinder-data/files/holt-files/holt-floor-1.json",
+          "floorLevelOverride": 1,
+          "floorLabelOverride": "Floor 1",
+          "buildingIdOverride": "holt",
+          "buildingLabelOverride": "Holt Hall"
+        },
+        {
+          "path": "/wayfinder-data/files/holt-files/holt-floor-2.json",
+          "floorLevelOverride": 2,
+          "floorLabelOverride": "Floor 2",
+          "buildingIdOverride": "holt",
+          "buildingLabelOverride": "Holt Hall"
+        },
+        {
+          "path": "/wayfinder-data/files/holt-files/holt-floor-3.json",
+          "floorLevelOverride": 3,
+          "floorLabelOverride": "Floor 3",
+          "buildingIdOverride": "holt",
+          "buildingLabelOverride": "Holt Hall"
+        }
+      ]
+    },
+    {
+      "id": "oconnell",
+      "label": "O'Connell Center",
+      "classCode": "OCNL",
+      "aliases": ["oconnell", "o'connell", "oc"],
+      "floors": [
+        {
+          "path": "/wayfinder-data/files/o'connell-files/oconnell1.json",
+          "floorLevelOverride": 1,
+          "floorLabelOverride": "Floor 1",
+          "buildingIdOverride": "building-oconnel",
+          "buildingLabelOverride": "O'Connell Center"
+        },
+        {
+          "path": "/wayfinder-data/files/o'connell-files/oconnell2.json",
+          "floorLevelOverride": 2,
+          "floorLabelOverride": "Floor 2",
+          "buildingIdOverride": "building-oconnel",
+          "buildingLabelOverride": "O'Connell Center"
+        },
+        {
+          "path": "/wayfinder-data/files/o'connell-files/oconnell3.json",
+          "floorLevelOverride": 3,
+          "floorLabelOverride": "Floor 3",
+          "buildingIdOverride": "building-oconnel",
+          "buildingLabelOverride": "O'Connell Center"
+        },
+        {
+          "path": "/wayfinder-data/files/o'connell-files/oconnell4.json",
+          "floorLevelOverride": 4,
+          "floorLabelOverride": "Floor 4",
+          "buildingIdOverride": "building-oconnel",
+          "buildingLabelOverride": "O'Connell Center"
+        }
+      ]
+    },
+    {
+      "id": "plumas",
+      "label": "Plumas Hall",
+      "classCode": "PLMS",
+      "aliases": ["plumas"],
+      "floors": [
+        {
+          "path": "/wayfinder-data/files/plumas-files/plumas1.json",
+          "floorLevelOverride": 1,
+          "floorLabelOverride": "Floor 1",
+          "buildingIdOverride": "building-plumas",
+          "buildingLabelOverride": "Plumas Hall"
+        },
+        {
+          "path": "/wayfinder-data/files/plumas-files/plumas2.json",
+          "floorLevelOverride": 2,
+          "floorLabelOverride": "Floor 2",
+          "buildingIdOverride": "building-plumas",
+          "buildingLabelOverride": "Plumas Hall"
+        },
+        {
+          "path": "/wayfinder-data/files/plumas-files/plumas3.json",
+          "floorLevelOverride": 3,
+          "floorLabelOverride": "Floor 3",
+          "buildingIdOverride": "building-plumas",
+          "buildingLabelOverride": "Plumas Hall"
+        }
+      ]
+    }
+  ]
+}

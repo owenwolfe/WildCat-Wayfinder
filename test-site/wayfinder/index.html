@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WildCat Wayfinder</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar card">
+      <div class="brand">
+        <div class="eyebrow">CSU Chico</div>
+        <h1>WildCat Wayfinder</h1>
+        <p class="muted">Frontend skeleton for building, room, entrance, and class-based navigation.</p>
+      </div>
+
+      <section class="stack-md">
+        <div class="section-label">Data</div>
+        <button id="loadDataBtn" class="primary">Load wayfinder data</button>
+        <div id="dataStatus" class="status-pill">Not loaded</div>
+        <div id="dataSummary" class="small muted"></div>
+      </section>
+
+      <section class="stack-md">
+        <div class="section-label">Filters</div>
+        <label>
+          Building
+          <select id="buildingFilter"></select>
+        </label>
+        <label>
+          Floor
+          <select id="floorFilter"></select>
+        </label>
+        <!--
+        <label>
+          Route mode
+          <select id="routeMode">
+            <option value="default">Default</option>
+            <option value="accessible">Accessible / elevator first</option>
+            <option value="stairs">Stairs preferred</option>
+          </select>
+        </label>
+        -->
+      </section>
+
+      <section class="stack-md">
+        <div class="section-label">Start</div>
+        <label>
+          Search by
+          <select id="startMode">
+            <option value="all">Anything</option>
+            <option value="entrance">Entrance</option>
+            <option value="room">Room</option>
+            <option value="class">Class</option>
+          </select>
+        </label>
+        <label>
+          Start search
+          <input id="startInput" list="startSuggestions" placeholder="Entrance 1, 329, ABUS 101..." />
+          <datalist id="startSuggestions"></datalist>
+        </label>
+        <div id="startSelection" class="selection-card empty">No start selected.</div>
+      </section>
+
+      <section class="stack-md">
+        <div class="section-label">Destination</div>
+        <label>
+          Search by
+          <select id="destinationMode">
+            <option value="all">Anything</option>
+            <option value="room">Room</option>
+            <option value="entrance">Entrance</option>
+            <option value="class">Class</option>
+          </select>
+        </label>
+        <label>
+          Destination search
+          <input id="destinationInput" list="destinationSuggestions" placeholder="Room 200, North Entrance, HIST 341W..." />
+          <datalist id="destinationSuggestions"></datalist>
+        </label>
+        <div id="destinationSelection" class="selection-card empty">No destination selected.</div>
+      </section>
+
+      <section class="stack-md">
+        <div class="section-label">Actions</div>
+        <div class="button-row">
+          <button id="resolveBtn">Resolve selections</button>
+          <button id="previewBtn">Preview route</button>
+          <button id="resetBtn" class="ghost">Reset</button>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main-grid">
+      <section class="hero card">
+        <div>
+          <div class="eyebrow">New page skeleton</div>
+          <h2>Designed for a new page on hack.adamschussel.com</h2>
+          <p class="muted">This page loads graph JSON, class data, and a manifest. It is ready to wire into the existing routing engine from <code>viewer.html</code>.</p>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric"><span id="metricBuildings">0</span><small>buildings</small></div>
+          <div class="metric"><span id="metricFloors">0</span><small>floors</small></div>
+          <div class="metric"><span id="metricClasses">0</span><small>class matches</small></div>
+        </div>
+      </section>
+
+      <section class="card panel-wide">
+        <div class="panel-header">
+          <h3>Floor preview</h3>
+          <span id="floorPreviewLabel" class="badge">No floor selected</span>
+        </div>
+        <div id="floorPreview" class="preview-grid empty-state">
+          Load data to preview entrances, rooms, and nodes on a floor.
+        </div>
+      </section>
+
+      <section class="card panel-wide">
+        <div class="panel-header">
+          <h3>Route preview</h3>
+          <span id="routeStatus" class="badge">Idle</span>
+        </div>
+        <div id="routeSummary" class="route-summary empty-state">
+          Choose a start and destination, then preview the route.
+        </div>
+      </section>
+
+<section class="card panel-wide">
+  <div class="panel-header">
+    <h3>Route map</h3>
+    <span id="routeMapLabel" class="badge">No floor selected</span>
+  </div>
+
+  <div class="button-row" style="margin-bottom: 12px;">
+    <button id="routePrevBtn" class="ghost">Back</button>
+    <div id="routeMapStepLabel" class="small muted" style="align-self: center;">No segment selected</div>
+    <button id="routeNextBtn">Next</button>
+  </div>
+
+<div id="routeMapStage" style="position: relative; width: 100%; min-height: 520px; border: 1px solid #d9e0ea; border-radius: 14px; overflow: hidden; background: #f8fafc;">
+  <svg id="routeMapOverlay" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"
+       style="display: block; width: 100%; height: 100%; min-height: 520px;">
+    <image id="routeMapImage" href="" x="0" y="0" width="1000" height="1000" preserveAspectRatio="xMidYMid meet"></image>
+    <polyline id="routePolyline"
+              fill="none"
+              stroke="#d946ef"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              points="" />
+  </svg>
+</div>
+</section> 
+
+      <section class="card">
+        <div class="panel-header">
+          <h3>Supported class locations</h3>
+          <span class="badge">from chico_classes_p.json</span>
+        </div>
+        <div id="classCoverage" class="stack-sm empty-state">Load data to see which scheduled classes can resolve to mapped rooms.</div>
+      </section>
+
+      <section class="card">
+        <div class="panel-header">
+          <h3>Data health</h3>
+          <span class="badge">repo audit</span>
+        </div>
+        <div id="healthPanel" class="stack-sm empty-state">Load data to check for file issues that can break the UI.</div>
+      </section>
+    </main>
+  </div>
+
+<script src="./engine-adapter.js"></script>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5440 @@
+{
+  "bldg_cd": "OCNL",
+  "building_name": "O'Connell Center",
+  "rooms": [
+    {
+      "room": "120",
+      "facility_id": "OCNL120",
+      "facility_descr": "O'Connell Center 120",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4793,
+            "course": "HIST 341W",
+            "section": "05",
+            "title": "American Environment (W)",
+            "component": "LEC",
+            "start_time": "13:00",
+            "end_time": "14:15",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.15.00.000000",
+            "instructors": [
+              "Timothy Sistrunk"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 2907,
+            "course": "JAPN 101",
+            "section": "01",
+            "title": "Beginning Japanese I",
+            "component": "DIS",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Keiko Tokuda"
+            ]
+          },
+          {
+            "class_nbr": 2903,
+            "course": "JAPN 201",
+            "section": "01",
+            "title": "Intermediate Japanese I",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Keiko Tokuda"
+            ]
+          },
+          {
+            "class_nbr": 2905,
+            "course": "JAPN 202",
+            "section": "01",
+            "title": "Intermediate Japanese II",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Keiko Tokuda"
+            ]
+          },
+          {
+            "class_nbr": 2909,
+            "course": "JAPN 101",
+            "section": "03",
+            "title": "Beginning Japanese I",
+            "component": "DIS",
+            "start_time": "12:30",
+            "end_time": "13:45",
+            "start_time_raw": "12.30.00.000000",
+            "end_time_raw": "13.45.00.000000",
+            "instructors": [
+              "Keiko Tokuda"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4793,
+            "course": "HIST 341W",
+            "section": "05",
+            "title": "American Environment (W)",
+            "component": "LEC",
+            "start_time": "13:00",
+            "end_time": "14:15",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.15.00.000000",
+            "instructors": [
+              "Timothy Sistrunk"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 2907,
+            "course": "JAPN 101",
+            "section": "01",
+            "title": "Beginning Japanese I",
+            "component": "DIS",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Keiko Tokuda"
+            ]
+          },
+          {
+            "class_nbr": 2903,
+            "course": "JAPN 201",
+            "section": "01",
+            "title": "Intermediate Japanese I",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Keiko Tokuda"
+            ]
+          },
+          {
+            "class_nbr": 2905,
+            "course": "JAPN 202",
+            "section": "01",
+            "title": "Intermediate Japanese II",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Keiko Tokuda"
+            ]
+          },
+          {
+            "class_nbr": 2909,
+            "course": "JAPN 101",
+            "section": "03",
+            "title": "Beginning Japanese I",
+            "component": "DIS",
+            "start_time": "12:30",
+            "end_time": "13:45",
+            "start_time_raw": "12.30.00.000000",
+            "end_time_raw": "13.45.00.000000",
+            "instructors": [
+              "Keiko Tokuda"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "121",
+      "facility_id": "OCNL121",
+      "facility_descr": "O'Connell Center 121",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3080,
+            "course": "PHIL 323W",
+            "section": "04",
+            "title": "Moral Issues in Parenting (W)",
+            "component": "LEC",
+            "start_time": "13:00",
+            "end_time": "14:15",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.15.00.000000",
+            "instructors": [
+              "Donald Felipe"
+            ]
+          },
+          {
+            "class_nbr": 4263,
+            "course": "PHIL 384",
+            "section": "01",
+            "title": "Aesthetics",
+            "component": "LEC",
+            "start_time": "14:30",
+            "end_time": "15:45",
+            "start_time_raw": "14.30.00.000000",
+            "end_time_raw": "15.45.00.000000",
+            "instructors": [
+              "Edward Pluth"
+            ]
+          },
+          {
+            "class_nbr": 5095,
+            "course": "CSCI 490",
+            "section": "09",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "16:00",
+            "end_time": "17:15",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.15.00.000000",
+            "instructors": [
+              "Richard Tillquist"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3916,
+            "course": "CSCI 693",
+            "section": "05",
+            "title": "Research Methods in Computer Science",
+            "component": "SUP",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Kun Tian"
+            ]
+          },
+          {
+            "class_nbr": 3068,
+            "course": "PHIL 361",
+            "section": "01",
+            "title": "Metaphysics",
+            "component": "SEM",
+            "start_time": "12:30",
+            "end_time": "13:45",
+            "start_time_raw": "12.30.00.000000",
+            "end_time_raw": "13.45.00.000000",
+            "instructors": [
+              "Wai-Hung Wong"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 3080,
+            "course": "PHIL 323W",
+            "section": "04",
+            "title": "Moral Issues in Parenting (W)",
+            "component": "LEC",
+            "start_time": "13:00",
+            "end_time": "14:15",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.15.00.000000",
+            "instructors": [
+              "Donald Felipe"
+            ]
+          },
+          {
+            "class_nbr": 4263,
+            "course": "PHIL 384",
+            "section": "01",
+            "title": "Aesthetics",
+            "component": "LEC",
+            "start_time": "14:30",
+            "end_time": "15:45",
+            "start_time_raw": "14.30.00.000000",
+            "end_time_raw": "15.45.00.000000",
+            "instructors": [
+              "Edward Pluth"
+            ]
+          },
+          {
+            "class_nbr": 5095,
+            "course": "CSCI 490",
+            "section": "09",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "16:00",
+            "end_time": "17:15",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.15.00.000000",
+            "instructors": [
+              "Richard Tillquist"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3916,
+            "course": "CSCI 693",
+            "section": "05",
+            "title": "Research Methods in Computer Science",
+            "component": "SUP",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Kun Tian"
+            ]
+          },
+          {
+            "class_nbr": 3068,
+            "course": "PHIL 361",
+            "section": "01",
+            "title": "Metaphysics",
+            "component": "SEM",
+            "start_time": "12:30",
+            "end_time": "13:45",
+            "start_time_raw": "12.30.00.000000",
+            "end_time_raw": "13.45.00.000000",
+            "instructors": [
+              "Wai-Hung Wong"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "123",
+      "facility_id": "OCNL123",
+      "facility_descr": "O'Connell Center 123",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 5025,
+            "course": "CSCI 490",
+            "section": "08",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "13:00",
+            "end_time": "14:15",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.15.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 1715,
+            "course": "CHLD 353W",
+            "section": "01",
+            "title": "Methods of Inquiry in Child Development (W)",
+            "component": "SEM",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Cate Szczepanski"
+            ]
+          },
+          {
+            "class_nbr": 3900,
+            "course": "CSCI 551",
+            "section": "02",
+            "title": "Numerical Methods and Parallel Programming",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Sam Siewert"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 5025,
+            "course": "CSCI 490",
+            "section": "08",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "13:00",
+            "end_time": "14:15",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.15.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 1716,
+            "course": "CHLD 353W",
+            "section": "02",
+            "title": "Methods of Inquiry in Child Development (W)",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Cate Szczepanski"
+            ]
+          },
+          {
+            "class_nbr": 3900,
+            "course": "CSCI 551",
+            "section": "02",
+            "title": "Numerical Methods and Parallel Programming",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Sam Siewert"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "124",
+      "facility_id": "OCNL124",
+      "facility_descr": "O'Connell Center 124",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4080,
+            "course": "MECA 380",
+            "section": "01",
+            "title": "Measurements and Instrumentation",
+            "component": "DIS",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Marcus Battraw"
+            ]
+          },
+          {
+            "class_nbr": 3925,
+            "course": "EECE 144",
+            "section": "01",
+            "title": "Logic Design Fundamentals",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Kurtis Kredo"
+            ]
+          },
+          {
+            "class_nbr": 3882,
+            "course": "CSCI 430",
+            "section": "01",
+            "title": "Software Engineering",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Kevin Buffardi"
+            ]
+          },
+          {
+            "class_nbr": 4095,
+            "course": "MECH 340W",
+            "section": "01",
+            "title": "Mechanical Engineering Design (W)",
+            "component": "LEC",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Dennis O'Connor"
+            ]
+          },
+          {
+            "class_nbr": 4274,
+            "course": "EECE 375",
+            "section": "01",
+            "title": "Fields and Waves",
+            "component": "DIS",
+            "start_time": "16:00",
+            "end_time": "17:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "David Silveira"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 1486,
+            "course": "KINE 505",
+            "section": "01",
+            "title": "Exercise Behavior and Adherence",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "09:15",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "09.15.00.000000",
+            "instructors": [
+              "Aubrey Newland"
+            ]
+          },
+          {
+            "class_nbr": 4110,
+            "course": "MECH 210",
+            "section": "01",
+            "title": "Materials Science and Engineering",
+            "component": "DIS",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Ozgul Yasar"
+            ]
+          },
+          {
+            "class_nbr": 4108,
+            "course": "MECH 306",
+            "section": "01",
+            "title": "Equation Solving Techniques",
+            "component": "LEC",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Gregory Watkins"
+            ]
+          },
+          {
+            "class_nbr": 3869,
+            "course": "CSCI 515",
+            "section": "01",
+            "title": "Compiler Design",
+            "component": "DIS",
+            "start_time": "12:30",
+            "end_time": "13:45",
+            "start_time_raw": "12.30.00.000000",
+            "end_time_raw": "13.45.00.000000",
+            "instructors": [
+              "Oleksiy Al-Saadi"
+            ]
+          },
+          {
+            "class_nbr": 4104,
+            "course": "MECH 338",
+            "section": "02",
+            "title": "Heat Transfer",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "16:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Yang Chao"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4080,
+            "course": "MECA 380",
+            "section": "01",
+            "title": "Measurements and Instrumentation",
+            "component": "DIS",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Marcus Battraw"
+            ]
+          },
+          {
+            "class_nbr": 3925,
+            "course": "EECE 144",
+            "section": "01",
+            "title": "Logic Design Fundamentals",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Kurtis Kredo"
+            ]
+          },
+          {
+            "class_nbr": 3882,
+            "course": "CSCI 430",
+            "section": "01",
+            "title": "Software Engineering",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Kevin Buffardi"
+            ]
+          },
+          {
+            "class_nbr": 4095,
+            "course": "MECH 340W",
+            "section": "01",
+            "title": "Mechanical Engineering Design (W)",
+            "component": "LEC",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Dennis O'Connor"
+            ]
+          },
+          {
+            "class_nbr": 4109,
+            "course": "MECH 306",
+            "section": "02",
+            "title": "Equation Solving Techniques",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "15:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Gregory Watkins"
+            ]
+          },
+          {
+            "class_nbr": 4274,
+            "course": "EECE 375",
+            "section": "01",
+            "title": "Fields and Waves",
+            "component": "DIS",
+            "start_time": "16:00",
+            "end_time": "17:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "David Silveira"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 1486,
+            "course": "KINE 505",
+            "section": "01",
+            "title": "Exercise Behavior and Adherence",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "09:15",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "09.15.00.000000",
+            "instructors": [
+              "Aubrey Newland"
+            ]
+          },
+          {
+            "class_nbr": 4110,
+            "course": "MECH 210",
+            "section": "01",
+            "title": "Materials Science and Engineering",
+            "component": "DIS",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Ozgul Yasar"
+            ]
+          },
+          {
+            "class_nbr": 4108,
+            "course": "MECH 306",
+            "section": "01",
+            "title": "Equation Solving Techniques",
+            "component": "LEC",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Gregory Watkins"
+            ]
+          },
+          {
+            "class_nbr": 3869,
+            "course": "CSCI 515",
+            "section": "01",
+            "title": "Compiler Design",
+            "component": "DIS",
+            "start_time": "12:30",
+            "end_time": "13:45",
+            "start_time_raw": "12.30.00.000000",
+            "end_time_raw": "13.45.00.000000",
+            "instructors": [
+              "Oleksiy Al-Saadi"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 3925,
+            "course": "EECE 144",
+            "section": "01",
+            "title": "Logic Design Fundamentals",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Kurtis Kredo"
+            ]
+          },
+          {
+            "class_nbr": 4095,
+            "course": "MECH 340W",
+            "section": "01",
+            "title": "Mechanical Engineering Design (W)",
+            "component": "LEC",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Dennis O'Connor"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "127",
+      "facility_id": "OCNL127",
+      "facility_descr": "O'Connell Center 127",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4845,
+            "course": "CMGT 110",
+            "section": "11",
+            "title": "Construction Graphics",
+            "component": "DIS",
+            "start_time": "15:00",
+            "end_time": "16:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": []
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3799,
+            "course": "CMGT 110",
+            "section": "01",
+            "title": "Construction Graphics",
+            "component": "DIS",
+            "start_time": "09:00",
+            "end_time": "10:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Brooke Kinner"
+            ]
+          },
+          {
+            "class_nbr": 3820,
+            "course": "CMGT 110",
+            "section": "03",
+            "title": "Construction Graphics",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Brooke Kinner"
+            ]
+          },
+          {
+            "class_nbr": 3846,
+            "course": "CMGT 110",
+            "section": "05",
+            "title": "Construction Graphics",
+            "component": "DIS",
+            "start_time": "13:00",
+            "end_time": "14:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Brooke Kinner"
+            ]
+          },
+          {
+            "class_nbr": 3851,
+            "course": "CMGT 110",
+            "section": "07",
+            "title": "Construction Graphics",
+            "component": "DIS",
+            "start_time": "15:00",
+            "end_time": "16:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Brooke Kinner"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 3829,
+            "course": "CMGT 332",
+            "section": "02",
+            "title": "Construction Method Analysis",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "10:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Gregory Hansen"
+            ]
+          },
+          {
+            "class_nbr": 3848,
+            "course": "CMGT 332",
+            "section": "03",
+            "title": "Construction Method Analysis",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Gregory Hansen"
+            ]
+          },
+          {
+            "class_nbr": 4846,
+            "course": "CMGT 110",
+            "section": "12",
+            "title": "Construction Graphics",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "16:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Gregory Hansen"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3819,
+            "course": "CMGT 110",
+            "section": "02",
+            "title": "Construction Graphics",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "10:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Brooke Kinner"
+            ]
+          },
+          {
+            "class_nbr": 3821,
+            "course": "CMGT 110",
+            "section": "04",
+            "title": "Construction Graphics",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Brooke Kinner"
+            ]
+          },
+          {
+            "class_nbr": 3847,
+            "course": "CMGT 110",
+            "section": "06",
+            "title": "Construction Graphics",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "14:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Brooke Kinner"
+            ]
+          },
+          {
+            "class_nbr": 3852,
+            "course": "CMGT 110",
+            "section": "08",
+            "title": "Construction Graphics",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "16:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Brooke Kinner"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "130",
+      "facility_id": "OCNL130",
+      "facility_descr": "O'Connell Center 130",
+      "by_day": {
+        "Mo": [],
+        "Tu": [
+          {
+            "class_nbr": 4111,
+            "course": "MECH 210L",
+            "section": "01",
+            "title": "Materials Science and Engineering Laboratory",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Ozgul Yasar"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4112,
+            "course": "MECH 210L",
+            "section": "02",
+            "title": "Materials Science and Engineering Laboratory",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Ozgul Yasar"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 4126,
+            "course": "MECH 210L",
+            "section": "03",
+            "title": "Materials Science and Engineering Laboratory",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Ozgul Yasar"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "131",
+      "facility_id": "OCNL131",
+      "facility_descr": "O'Connell Center 131",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4014,
+            "course": "CAGD 280",
+            "section": "01",
+            "title": "Introduction to Game Scripting",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "08:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "08.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4015,
+            "course": "CAGD 280",
+            "section": "02",
+            "title": "Introduction to Game Scripting",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4571,
+            "course": "CAGD 230",
+            "section": "03",
+            "title": "Digital Modeling I",
+            "component": "DIS",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 4572,
+            "course": "CAGD 230",
+            "section": "04",
+            "title": "Digital Modeling I",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 4569,
+            "course": "CAGD 150",
+            "section": "03",
+            "title": "Introduction to Visual Scripting",
+            "component": "LEC",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4570,
+            "course": "CAGD 150",
+            "section": "04",
+            "title": "Introduction to Visual Scripting",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4010,
+            "course": "CAGD 230",
+            "section": "01",
+            "title": "Digital Modeling I",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 4011,
+            "course": "CAGD 230",
+            "section": "02",
+            "title": "Digital Modeling I",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 4044,
+            "course": "CAGD 240",
+            "section": "01",
+            "title": "Digital Animation I",
+            "component": "LEC",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "John Pozzi"
+            ]
+          },
+          {
+            "class_nbr": 4045,
+            "course": "CAGD 240",
+            "section": "02",
+            "title": "Digital Animation I",
+            "component": "ACT",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "John Pozzi"
+            ]
+          },
+          {
+            "class_nbr": 4918,
+            "course": "CAGD 432",
+            "section": "03",
+            "title": "3D Character Rigging",
+            "component": "DIS",
+            "start_time": "18:00",
+            "end_time": "18:50",
+            "start_time_raw": "18.00.00.000000",
+            "end_time_raw": "18.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 4919,
+            "course": "CAGD 432",
+            "section": "04",
+            "title": "3D Character Rigging",
+            "component": "ACT",
+            "start_time": "19:00",
+            "end_time": "19:50",
+            "start_time_raw": "19.00.00.000000",
+            "end_time_raw": "19.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 4027,
+            "course": "CAGD 441",
+            "section": "01",
+            "title": "3D Character Animation",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "08:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "08.50.00.000000",
+            "instructors": [
+              "Mark Pullyblank"
+            ]
+          },
+          {
+            "class_nbr": 4028,
+            "course": "CAGD 441",
+            "section": "02",
+            "title": "3D Character Animation",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Mark Pullyblank"
+            ]
+          },
+          {
+            "class_nbr": 4055,
+            "course": "CAGD 380",
+            "section": "01",
+            "title": "Game Scripting",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Jeff Underwood"
+            ]
+          },
+          {
+            "class_nbr": 4056,
+            "course": "CAGD 380",
+            "section": "02",
+            "title": "Game Scripting",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Jeff Underwood"
+            ]
+          },
+          {
+            "class_nbr": 3992,
+            "course": "CAGD 180",
+            "section": "01",
+            "title": "Scripting and Programming for Computer Graphics",
+            "component": "LEC",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 3993,
+            "course": "CAGD 180",
+            "section": "02",
+            "title": "Scripting and Programming for Computer Graphics",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4567,
+            "course": "CAGD 150",
+            "section": "01",
+            "title": "Introduction to Visual Scripting",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4568,
+            "course": "CAGD 150",
+            "section": "02",
+            "title": "Introduction to Visual Scripting",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4001,
+            "course": "CAGD 495",
+            "section": "04",
+            "title": "Advanced Production",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "17:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          },
+          {
+            "class_nbr": 4000,
+            "course": "CAGD 495",
+            "section": "03",
+            "title": "Advanced Production",
+            "component": "DIS",
+            "start_time": "18:00",
+            "end_time": "18:50",
+            "start_time_raw": "18.00.00.000000",
+            "end_time_raw": "18.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4014,
+            "course": "CAGD 280",
+            "section": "01",
+            "title": "Introduction to Game Scripting",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "08:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "08.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4015,
+            "course": "CAGD 280",
+            "section": "02",
+            "title": "Introduction to Game Scripting",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4571,
+            "course": "CAGD 230",
+            "section": "03",
+            "title": "Digital Modeling I",
+            "component": "DIS",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 4572,
+            "course": "CAGD 230",
+            "section": "04",
+            "title": "Digital Modeling I",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 4569,
+            "course": "CAGD 150",
+            "section": "03",
+            "title": "Introduction to Visual Scripting",
+            "component": "LEC",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4570,
+            "course": "CAGD 150",
+            "section": "04",
+            "title": "Introduction to Visual Scripting",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4010,
+            "course": "CAGD 230",
+            "section": "01",
+            "title": "Digital Modeling I",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 4011,
+            "course": "CAGD 230",
+            "section": "02",
+            "title": "Digital Modeling I",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 4044,
+            "course": "CAGD 240",
+            "section": "01",
+            "title": "Digital Animation I",
+            "component": "LEC",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "John Pozzi"
+            ]
+          },
+          {
+            "class_nbr": 4045,
+            "course": "CAGD 240",
+            "section": "02",
+            "title": "Digital Animation I",
+            "component": "ACT",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "John Pozzi"
+            ]
+          },
+          {
+            "class_nbr": 4918,
+            "course": "CAGD 432",
+            "section": "03",
+            "title": "3D Character Rigging",
+            "component": "DIS",
+            "start_time": "18:00",
+            "end_time": "18:50",
+            "start_time_raw": "18.00.00.000000",
+            "end_time_raw": "18.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 4919,
+            "course": "CAGD 432",
+            "section": "04",
+            "title": "3D Character Rigging",
+            "component": "ACT",
+            "start_time": "19:00",
+            "end_time": "19:50",
+            "start_time_raw": "19.00.00.000000",
+            "end_time_raw": "19.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 4027,
+            "course": "CAGD 441",
+            "section": "01",
+            "title": "3D Character Animation",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "08:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "08.50.00.000000",
+            "instructors": [
+              "Mark Pullyblank"
+            ]
+          },
+          {
+            "class_nbr": 4028,
+            "course": "CAGD 441",
+            "section": "02",
+            "title": "3D Character Animation",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Mark Pullyblank"
+            ]
+          },
+          {
+            "class_nbr": 4055,
+            "course": "CAGD 380",
+            "section": "01",
+            "title": "Game Scripting",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Jeff Underwood"
+            ]
+          },
+          {
+            "class_nbr": 4056,
+            "course": "CAGD 380",
+            "section": "02",
+            "title": "Game Scripting",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Jeff Underwood"
+            ]
+          },
+          {
+            "class_nbr": 3992,
+            "course": "CAGD 180",
+            "section": "01",
+            "title": "Scripting and Programming for Computer Graphics",
+            "component": "LEC",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 3993,
+            "course": "CAGD 180",
+            "section": "02",
+            "title": "Scripting and Programming for Computer Graphics",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4567,
+            "course": "CAGD 150",
+            "section": "01",
+            "title": "Introduction to Visual Scripting",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4568,
+            "course": "CAGD 150",
+            "section": "02",
+            "title": "Introduction to Visual Scripting",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Kilan Larsen"
+            ]
+          },
+          {
+            "class_nbr": 4001,
+            "course": "CAGD 495",
+            "section": "04",
+            "title": "Advanced Production",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "17:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 3994,
+            "course": "CAGD 112",
+            "section": "03",
+            "title": "Virtual and Physical Camera Applications",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Christina Backlund"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "133",
+      "facility_id": "OCNL133",
+      "facility_descr": "O'Connell Center 133",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4032,
+            "course": "CAGD 495",
+            "section": "06",
+            "title": "Advanced Production",
+            "component": "ACT",
+            "start_time": "08:00",
+            "end_time": "09:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Frank Pereira",
+              "Mark Pullyblank"
+            ]
+          },
+          {
+            "class_nbr": 3985,
+            "course": "CAGD 432",
+            "section": "01",
+            "title": "3D Character Rigging",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 3986,
+            "course": "CAGD 432",
+            "section": "02",
+            "title": "3D Character Rigging",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Cody Philbrook",
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 5145,
+            "course": "CAGD 545",
+            "section": "02",
+            "title": "Game Animation",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Nathan Pool"
+            ]
+          },
+          {
+            "class_nbr": 5146,
+            "course": "CAGD 545",
+            "section": "03",
+            "title": "Game Animation",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Nathan Pool"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3987,
+            "course": "CAGD 270",
+            "section": "01",
+            "title": "Level Design",
+            "component": "DIS",
+            "start_time": "08:00",
+            "end_time": "08:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "08.50.00.000000",
+            "instructors": [
+              "Martin Salcedo"
+            ]
+          },
+          {
+            "class_nbr": 3988,
+            "course": "CAGD 270",
+            "section": "02",
+            "title": "Level Design",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Martin Salcedo"
+            ]
+          },
+          {
+            "class_nbr": 4023,
+            "course": "CAGD 377",
+            "section": "01",
+            "title": "Mobile Game Development",
+            "component": "DIS",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          },
+          {
+            "class_nbr": 4024,
+            "course": "CAGD 377",
+            "section": "02",
+            "title": "Mobile Game Development",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          },
+          {
+            "class_nbr": 3980,
+            "course": "CAGD 370",
+            "section": "01",
+            "title": "Video Game Development",
+            "component": "LEC",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Daniel Alioto",
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 3982,
+            "course": "CAGD 370",
+            "section": "02",
+            "title": "Video Game Development",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          },
+          {
+            "class_nbr": 4473,
+            "course": "CAGD 458",
+            "section": "01",
+            "title": "Applied Emerging Technologies in Media and Entertainment",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "15:15",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.15.00.000000",
+            "instructors": [
+              "Jeff Underwood"
+            ]
+          },
+          {
+            "class_nbr": 3984,
+            "course": "CAGD 495",
+            "section": "02",
+            "title": "Advanced Production",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "17:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 3983,
+            "course": "CAGD 495",
+            "section": "01",
+            "title": "Advanced Production",
+            "component": "DIS",
+            "start_time": "18:00",
+            "end_time": "18:50",
+            "start_time_raw": "18.00.00.000000",
+            "end_time_raw": "18.50.00.000000",
+            "instructors": [
+              "Jeff Underwood"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4032,
+            "course": "CAGD 495",
+            "section": "06",
+            "title": "Advanced Production",
+            "component": "ACT",
+            "start_time": "08:00",
+            "end_time": "09:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Frank Pereira",
+              "Mark Pullyblank"
+            ]
+          },
+          {
+            "class_nbr": 3985,
+            "course": "CAGD 432",
+            "section": "01",
+            "title": "3D Character Rigging",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 3986,
+            "course": "CAGD 432",
+            "section": "02",
+            "title": "3D Character Rigging",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Cody Philbrook",
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 5145,
+            "course": "CAGD 545",
+            "section": "02",
+            "title": "Game Animation",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Nathan Pool"
+            ]
+          },
+          {
+            "class_nbr": 5146,
+            "course": "CAGD 545",
+            "section": "03",
+            "title": "Game Animation",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Nathan Pool"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3987,
+            "course": "CAGD 270",
+            "section": "01",
+            "title": "Level Design",
+            "component": "DIS",
+            "start_time": "08:00",
+            "end_time": "08:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "08.50.00.000000",
+            "instructors": [
+              "Martin Salcedo"
+            ]
+          },
+          {
+            "class_nbr": 3988,
+            "course": "CAGD 270",
+            "section": "02",
+            "title": "Level Design",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Martin Salcedo"
+            ]
+          },
+          {
+            "class_nbr": 4023,
+            "course": "CAGD 377",
+            "section": "01",
+            "title": "Mobile Game Development",
+            "component": "DIS",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          },
+          {
+            "class_nbr": 4024,
+            "course": "CAGD 377",
+            "section": "02",
+            "title": "Mobile Game Development",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          },
+          {
+            "class_nbr": 3980,
+            "course": "CAGD 370",
+            "section": "01",
+            "title": "Video Game Development",
+            "component": "LEC",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Daniel Alioto",
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 3982,
+            "course": "CAGD 370",
+            "section": "02",
+            "title": "Video Game Development",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Daniel Alioto"
+            ]
+          },
+          {
+            "class_nbr": 4473,
+            "course": "CAGD 458",
+            "section": "01",
+            "title": "Applied Emerging Technologies in Media and Entertainment",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "15:15",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.15.00.000000",
+            "instructors": [
+              "Jeff Underwood"
+            ]
+          },
+          {
+            "class_nbr": 3984,
+            "course": "CAGD 495",
+            "section": "02",
+            "title": "Advanced Production",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "17:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "136",
+      "facility_id": "OCNL136",
+      "facility_descr": "O'Connell Center 136",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3978,
+            "course": "CAGD 117",
+            "section": "01",
+            "title": "Concept Design and Storyboarding",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "08:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "08.50.00.000000",
+            "instructors": [
+              "Christina Backlund"
+            ]
+          },
+          {
+            "class_nbr": 3979,
+            "course": "CAGD 117",
+            "section": "02",
+            "title": "Concept Design and Storyboarding",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Christina Backlund"
+            ]
+          },
+          {
+            "class_nbr": 4565,
+            "course": "CAGD 160",
+            "section": "01",
+            "title": "Introduction to Virtual Production",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 4566,
+            "course": "CAGD 160",
+            "section": "02",
+            "title": "Introduction to Virtual Production",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 3976,
+            "course": "CAGD 110",
+            "section": "02",
+            "title": "Computer-Assisted Art I",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Christina Backlund"
+            ]
+          },
+          {
+            "class_nbr": 4038,
+            "course": "CAGD 331",
+            "section": "01",
+            "title": "3D Character Modeling",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 4039,
+            "course": "CAGD 331",
+            "section": "02",
+            "title": "3D Character Modeling",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 4018,
+            "course": "CAGD 373",
+            "section": "01",
+            "title": "Game Asset Production",
+            "component": "LEC",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 4019,
+            "course": "CAGD 373",
+            "section": "02",
+            "title": "Game Asset Production",
+            "component": "ACT",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 5010,
+            "course": "CAGD 377",
+            "section": "03",
+            "title": "Mobile Game Development",
+            "component": "DIS",
+            "start_time": "18:00",
+            "end_time": "18:50",
+            "start_time_raw": "18.00.00.000000",
+            "end_time_raw": "18.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 5011,
+            "course": "CAGD 377",
+            "section": "04",
+            "title": "Mobile Game Development",
+            "component": "ACT",
+            "start_time": "19:00",
+            "end_time": "19:50",
+            "start_time_raw": "19.00.00.000000",
+            "end_time_raw": "19.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 4005,
+            "course": "CAGD 320",
+            "section": "01",
+            "title": "Digital Texturing",
+            "component": "DIS",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Susana Pena Vargas",
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4006,
+            "course": "CAGD 320",
+            "section": "02",
+            "title": "Digital Texturing",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4040,
+            "course": "CAGD 340",
+            "section": "01",
+            "title": "Digital Animation II",
+            "component": "LEC",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "John Pozzi"
+            ]
+          },
+          {
+            "class_nbr": 4041,
+            "course": "CAGD 340",
+            "section": "02",
+            "title": "Digital Animation II",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "John Pozzi"
+            ]
+          },
+          {
+            "class_nbr": 4007,
+            "course": "CAGD 320",
+            "section": "03",
+            "title": "Digital Texturing",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4008,
+            "course": "CAGD 320",
+            "section": "04",
+            "title": "Digital Texturing",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4562,
+            "course": "CAGD 420",
+            "section": "01",
+            "title": "3D Environment Modeling",
+            "component": "LEC",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4563,
+            "course": "CAGD 420",
+            "section": "02",
+            "title": "3D Environment Modeling",
+            "component": "ACT",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 3978,
+            "course": "CAGD 117",
+            "section": "01",
+            "title": "Concept Design and Storyboarding",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "08:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "08.50.00.000000",
+            "instructors": [
+              "Christina Backlund"
+            ]
+          },
+          {
+            "class_nbr": 3979,
+            "course": "CAGD 117",
+            "section": "02",
+            "title": "Concept Design and Storyboarding",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Christina Backlund"
+            ]
+          },
+          {
+            "class_nbr": 4565,
+            "course": "CAGD 160",
+            "section": "01",
+            "title": "Introduction to Virtual Production",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 4566,
+            "course": "CAGD 160",
+            "section": "02",
+            "title": "Introduction to Virtual Production",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 3976,
+            "course": "CAGD 110",
+            "section": "02",
+            "title": "Computer-Assisted Art I",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Christina Backlund"
+            ]
+          },
+          {
+            "class_nbr": 4038,
+            "course": "CAGD 331",
+            "section": "01",
+            "title": "3D Character Modeling",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 4039,
+            "course": "CAGD 331",
+            "section": "02",
+            "title": "3D Character Modeling",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Frank Pereira"
+            ]
+          },
+          {
+            "class_nbr": 4018,
+            "course": "CAGD 373",
+            "section": "01",
+            "title": "Game Asset Production",
+            "component": "LEC",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 4019,
+            "course": "CAGD 373",
+            "section": "02",
+            "title": "Game Asset Production",
+            "component": "ACT",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Cody Philbrook"
+            ]
+          },
+          {
+            "class_nbr": 5010,
+            "course": "CAGD 377",
+            "section": "03",
+            "title": "Mobile Game Development",
+            "component": "DIS",
+            "start_time": "18:00",
+            "end_time": "18:50",
+            "start_time_raw": "18.00.00.000000",
+            "end_time_raw": "18.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          },
+          {
+            "class_nbr": 5011,
+            "course": "CAGD 377",
+            "section": "04",
+            "title": "Mobile Game Development",
+            "component": "ACT",
+            "start_time": "19:00",
+            "end_time": "19:50",
+            "start_time_raw": "19.00.00.000000",
+            "end_time_raw": "19.50.00.000000",
+            "instructors": [
+              "Justin Amian"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 4005,
+            "course": "CAGD 320",
+            "section": "01",
+            "title": "Digital Texturing",
+            "component": "DIS",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Susana Pena Vargas",
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4006,
+            "course": "CAGD 320",
+            "section": "02",
+            "title": "Digital Texturing",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4040,
+            "course": "CAGD 340",
+            "section": "01",
+            "title": "Digital Animation II",
+            "component": "LEC",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "John Pozzi"
+            ]
+          },
+          {
+            "class_nbr": 4041,
+            "course": "CAGD 340",
+            "section": "02",
+            "title": "Digital Animation II",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "John Pozzi"
+            ]
+          },
+          {
+            "class_nbr": 4007,
+            "course": "CAGD 320",
+            "section": "03",
+            "title": "Digital Texturing",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4008,
+            "course": "CAGD 320",
+            "section": "04",
+            "title": "Digital Texturing",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4562,
+            "course": "CAGD 420",
+            "section": "01",
+            "title": "3D Environment Modeling",
+            "component": "LEC",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          },
+          {
+            "class_nbr": 4563,
+            "course": "CAGD 420",
+            "section": "02",
+            "title": "3D Environment Modeling",
+            "component": "ACT",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Connor Zelinsky"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "225",
+      "facility_id": "OCNL225",
+      "facility_descr": "O'Connell Center 225",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3918,
+            "course": "CSCI 693",
+            "section": "06",
+            "title": "Research Methods in Computer Science",
+            "component": "SUP",
+            "start_time": "15:00",
+            "end_time": "16:15",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.15.00.000000",
+            "instructors": [
+              "Brian Herring"
+            ]
+          }
+        ],
+        "Tu": [],
+        "We": [
+          {
+            "class_nbr": 3918,
+            "course": "CSCI 693",
+            "section": "06",
+            "title": "Research Methods in Computer Science",
+            "component": "SUP",
+            "start_time": "15:00",
+            "end_time": "16:15",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.15.00.000000",
+            "instructors": [
+              "Brian Herring"
+            ]
+          }
+        ],
+        "Th": [],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "237",
+      "facility_id": "OCNL237",
+      "facility_descr": "O'Connell Center 237",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3898,
+            "course": "CSCI 211",
+            "section": "04",
+            "title": "Programming and Algorithms II",
+            "component": "LEC",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          },
+          {
+            "class_nbr": 4579,
+            "course": "CSCI 520",
+            "section": "01",
+            "title": "Applied Quantum Computing for Computer Scientists",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Jaime Raigoza"
+            ]
+          },
+          {
+            "class_nbr": 4580,
+            "course": "CSCI 520",
+            "section": "02",
+            "title": "Applied Quantum Computing for Computer Scientists",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Jaime Raigoza"
+            ]
+          },
+          {
+            "class_nbr": 3914,
+            "course": "CSCI 490",
+            "section": "01",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "16:00",
+            "end_time": "17:15",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.15.00.000000",
+            "instructors": [
+              "Oleksiy Al-Saadi"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 4129,
+            "course": "HNRS 102W",
+            "section": "01",
+            "title": "Humanities (W)",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Tricia Sweet"
+            ]
+          },
+          {
+            "class_nbr": 3751,
+            "course": "CIVL 302W",
+            "section": "01",
+            "title": "Engineering Sustainability and Economic Analysis (W)",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Pablo Cornejo-Warner"
+            ]
+          },
+          {
+            "class_nbr": 3876,
+            "course": "CSCI 111",
+            "section": "04",
+            "title": "Programming and Algorithms I",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "15:15",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.15.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3865,
+            "course": "CSCI 301W",
+            "section": "01",
+            "title": "Computer's Impact on Society (W)",
+            "component": "DIS",
+            "start_time": "15:30",
+            "end_time": "16:45",
+            "start_time_raw": "15.30.00.000000",
+            "end_time_raw": "16.45.00.000000",
+            "instructors": [
+              "Tim Hayes"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 3898,
+            "course": "CSCI 211",
+            "section": "04",
+            "title": "Programming and Algorithms II",
+            "component": "LEC",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          },
+          {
+            "class_nbr": 4579,
+            "course": "CSCI 520",
+            "section": "01",
+            "title": "Applied Quantum Computing for Computer Scientists",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Jaime Raigoza"
+            ]
+          },
+          {
+            "class_nbr": 4580,
+            "course": "CSCI 520",
+            "section": "02",
+            "title": "Applied Quantum Computing for Computer Scientists",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Jaime Raigoza"
+            ]
+          },
+          {
+            "class_nbr": 3914,
+            "course": "CSCI 490",
+            "section": "01",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "16:00",
+            "end_time": "17:15",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.15.00.000000",
+            "instructors": [
+              "Oleksiy Al-Saadi"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 4129,
+            "course": "HNRS 102W",
+            "section": "01",
+            "title": "Humanities (W)",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Tricia Sweet"
+            ]
+          },
+          {
+            "class_nbr": 3751,
+            "course": "CIVL 302W",
+            "section": "01",
+            "title": "Engineering Sustainability and Economic Analysis (W)",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Pablo Cornejo-Warner"
+            ]
+          },
+          {
+            "class_nbr": 3876,
+            "course": "CSCI 111",
+            "section": "04",
+            "title": "Programming and Algorithms I",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "15:15",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.15.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3865,
+            "course": "CSCI 301W",
+            "section": "01",
+            "title": "Computer's Impact on Society (W)",
+            "component": "DIS",
+            "start_time": "15:30",
+            "end_time": "16:45",
+            "start_time_raw": "15.30.00.000000",
+            "end_time_raw": "16.45.00.000000",
+            "instructors": [
+              "Tim Hayes"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 3898,
+            "course": "CSCI 211",
+            "section": "04",
+            "title": "Programming and Algorithms II",
+            "component": "LEC",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "239",
+      "facility_id": "OCNL239",
+      "facility_descr": "O'Connell Center 239",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4877,
+            "course": "CSCI 490",
+            "section": "06",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          },
+          {
+            "class_nbr": 3854,
+            "course": "CSCI 220",
+            "section": "01",
+            "title": "Introduction to Cloud Infrastructure and Security",
+            "component": "DIS",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Brian Herring"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3920,
+            "course": "CSCI 490",
+            "section": "02",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          },
+          {
+            "class_nbr": 4458,
+            "course": "CSCI 431W",
+            "section": "03",
+            "title": "Usability Engineering (W)",
+            "component": "DIS",
+            "start_time": "11:30",
+            "end_time": "12:20",
+            "start_time_raw": "11.30.00.000000",
+            "end_time_raw": "12.20.00.000000",
+            "instructors": [
+              "Kevin Buffardi"
+            ]
+          },
+          {
+            "class_nbr": 4441,
+            "course": "CSCI 490",
+            "section": "05",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "15:30",
+            "end_time": "16:45",
+            "start_time_raw": "15.30.00.000000",
+            "end_time_raw": "16.45.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4877,
+            "course": "CSCI 490",
+            "section": "06",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          },
+          {
+            "class_nbr": 3854,
+            "course": "CSCI 220",
+            "section": "01",
+            "title": "Introduction to Cloud Infrastructure and Security",
+            "component": "DIS",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Brian Herring"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3920,
+            "course": "CSCI 490",
+            "section": "02",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          },
+          {
+            "class_nbr": 4458,
+            "course": "CSCI 431W",
+            "section": "03",
+            "title": "Usability Engineering (W)",
+            "component": "DIS",
+            "start_time": "11:30",
+            "end_time": "12:20",
+            "start_time_raw": "11.30.00.000000",
+            "end_time_raw": "12.20.00.000000",
+            "instructors": [
+              "Kevin Buffardi"
+            ]
+          },
+          {
+            "class_nbr": 4441,
+            "course": "CSCI 490",
+            "section": "05",
+            "title": "Capstone",
+            "component": "SUP",
+            "start_time": "15:30",
+            "end_time": "16:45",
+            "start_time_raw": "15.30.00.000000",
+            "end_time_raw": "16.45.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "241",
+      "facility_id": "OCNL241",
+      "facility_descr": "O'Connell Center 241",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3885,
+            "course": "CSCI 411",
+            "section": "01",
+            "title": "Advanced Algorithms",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Richard Tillquist"
+            ]
+          },
+          {
+            "class_nbr": 3875,
+            "course": "CSCI 301W",
+            "section": "02",
+            "title": "Computer's Impact on Society (W)",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Joshua Whittinghill"
+            ]
+          },
+          {
+            "class_nbr": 3909,
+            "course": "CSCI 693",
+            "section": "03",
+            "title": "Research Methods in Computer Science",
+            "component": "SUP",
+            "start_time": "14:30",
+            "end_time": "15:45",
+            "start_time_raw": "14.30.00.000000",
+            "end_time_raw": "15.45.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 4434,
+            "course": "CSCI 682",
+            "section": "01",
+            "title": "Topics in Artificial Intelligence",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Richard Tillquist"
+            ]
+          },
+          {
+            "class_nbr": 3863,
+            "course": "CSCI 111",
+            "section": "03",
+            "title": "Programming and Algorithms I",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Kathleen Isenegger"
+            ]
+          },
+          {
+            "class_nbr": 3859,
+            "course": "CSCI 567",
+            "section": "01",
+            "title": "Client Side App Development",
+            "component": "DIS",
+            "start_time": "15:30",
+            "end_time": "16:45",
+            "start_time_raw": "15.30.00.000000",
+            "end_time_raw": "16.45.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 3885,
+            "course": "CSCI 411",
+            "section": "01",
+            "title": "Advanced Algorithms",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Richard Tillquist"
+            ]
+          },
+          {
+            "class_nbr": 3875,
+            "course": "CSCI 301W",
+            "section": "02",
+            "title": "Computer's Impact on Society (W)",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Joshua Whittinghill"
+            ]
+          },
+          {
+            "class_nbr": 3909,
+            "course": "CSCI 693",
+            "section": "03",
+            "title": "Research Methods in Computer Science",
+            "component": "SUP",
+            "start_time": "14:30",
+            "end_time": "15:45",
+            "start_time_raw": "14.30.00.000000",
+            "end_time_raw": "15.45.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 4434,
+            "course": "CSCI 682",
+            "section": "01",
+            "title": "Topics in Artificial Intelligence",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Richard Tillquist"
+            ]
+          },
+          {
+            "class_nbr": 3863,
+            "course": "CSCI 111",
+            "section": "03",
+            "title": "Programming and Algorithms I",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Kathleen Isenegger"
+            ]
+          },
+          {
+            "class_nbr": 3859,
+            "course": "CSCI 567",
+            "section": "01",
+            "title": "Client Side App Development",
+            "component": "DIS",
+            "start_time": "15:30",
+            "end_time": "16:45",
+            "start_time_raw": "15.30.00.000000",
+            "end_time_raw": "16.45.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 3885,
+            "course": "CSCI 411",
+            "section": "01",
+            "title": "Advanced Algorithms",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Richard Tillquist"
+            ]
+          },
+          {
+            "class_nbr": 3875,
+            "course": "CSCI 301W",
+            "section": "02",
+            "title": "Computer's Impact on Society (W)",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Joshua Whittinghill"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "244",
+      "facility_id": "OCNL244",
+      "facility_descr": "O'Connell Center 244",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4435,
+            "course": "CSCI 217",
+            "section": "01",
+            "title": "Discrete Mathematics",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Kun Tian"
+            ]
+          },
+          {
+            "class_nbr": 3902,
+            "course": "CSCI 612",
+            "section": "02",
+            "title": "Applied Computer Vision",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Sam Siewert"
+            ]
+          },
+          {
+            "class_nbr": 3855,
+            "course": "CSCI 220",
+            "section": "02",
+            "title": "Introduction to Cloud Infrastructure and Security",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Brian Herring"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3906,
+            "course": "CSCI 551",
+            "section": "03",
+            "title": "Numerical Methods and Parallel Programming",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Sam Siewert"
+            ]
+          },
+          {
+            "class_nbr": 3866,
+            "course": "CSCI 311",
+            "section": "02",
+            "title": "Algorithms and Data Structures",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kun Tian"
+            ]
+          },
+          {
+            "class_nbr": 3899,
+            "course": "CSCI 211",
+            "section": "05",
+            "title": "Programming and Algorithms II",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          },
+          {
+            "class_nbr": 3868,
+            "course": "CSCI 440",
+            "section": "02",
+            "title": "Operating Systems",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4435,
+            "course": "CSCI 217",
+            "section": "01",
+            "title": "Discrete Mathematics",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Kun Tian"
+            ]
+          },
+          {
+            "class_nbr": 3902,
+            "course": "CSCI 612",
+            "section": "02",
+            "title": "Applied Computer Vision",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Sam Siewert"
+            ]
+          },
+          {
+            "class_nbr": 3855,
+            "course": "CSCI 220",
+            "section": "02",
+            "title": "Introduction to Cloud Infrastructure and Security",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Brian Herring"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3906,
+            "course": "CSCI 551",
+            "section": "03",
+            "title": "Numerical Methods and Parallel Programming",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Sam Siewert"
+            ]
+          },
+          {
+            "class_nbr": 3881,
+            "course": "CSCI 311",
+            "section": "03",
+            "title": "Algorithms and Data Structures",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kun Tian"
+            ]
+          },
+          {
+            "class_nbr": 3899,
+            "course": "CSCI 211",
+            "section": "05",
+            "title": "Programming and Algorithms II",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Shelley Wong"
+            ]
+          },
+          {
+            "class_nbr": 3868,
+            "course": "CSCI 440",
+            "section": "02",
+            "title": "Operating Systems",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 4435,
+            "course": "CSCI 217",
+            "section": "01",
+            "title": "Discrete Mathematics",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Kun Tian"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "251",
+      "facility_id": "OCNL251",
+      "facility_descr": "O'Connell Center 251",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3856,
+            "course": "CSCI 448",
+            "section": "01",
+            "title": "Cybersecurity",
+            "component": "LEC",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3858,
+            "course": "CSCI 448",
+            "section": "02",
+            "title": "Cybersecurity",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3864,
+            "course": "CSCI 211",
+            "section": "02",
+            "title": "Programming and Algorithms II",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "14:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Tyson Henry"
+            ]
+          },
+          {
+            "class_nbr": 3889,
+            "course": "CSCI 546",
+            "section": "02",
+            "title": "Network Forensics",
+            "component": "LAB",
+            "start_time": "16:00",
+            "end_time": "17:15",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.15.00.000000",
+            "instructors": [
+              "David Zeichick"
+            ]
+          },
+          {
+            "class_nbr": 4904,
+            "course": "CSCI 546",
+            "section": "03",
+            "title": "Network Forensics",
+            "component": "LAB",
+            "start_time": "17:30",
+            "end_time": "18:45",
+            "start_time_raw": "17.30.00.000000",
+            "end_time_raw": "18.45.00.000000",
+            "instructors": [
+              "David Zeichick"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3877,
+            "course": "CSCI 111",
+            "section": "05",
+            "title": "Programming and Algorithms I",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 4443,
+            "course": "CSCI 344",
+            "section": "02",
+            "title": "Shell Programming",
+            "component": "ACT",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 4444,
+            "course": "CSCI 344",
+            "section": "03",
+            "title": "Shell Programming",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3862,
+            "course": "CSCI 111",
+            "section": "02",
+            "title": "Programming and Algorithms I",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kathleen Isenegger"
+            ]
+          },
+          {
+            "class_nbr": 3878,
+            "course": "CSCI 440",
+            "section": "03",
+            "title": "Operating Systems",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 3856,
+            "course": "CSCI 448",
+            "section": "01",
+            "title": "Cybersecurity",
+            "component": "LEC",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3858,
+            "course": "CSCI 448",
+            "section": "02",
+            "title": "Cybersecurity",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3870,
+            "course": "CSCI 211",
+            "section": "03",
+            "title": "Programming and Algorithms II",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "14:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Tyson Henry"
+            ]
+          },
+          {
+            "class_nbr": 3889,
+            "course": "CSCI 546",
+            "section": "02",
+            "title": "Network Forensics",
+            "component": "LAB",
+            "start_time": "16:00",
+            "end_time": "17:15",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.15.00.000000",
+            "instructors": [
+              "David Zeichick"
+            ]
+          },
+          {
+            "class_nbr": 4904,
+            "course": "CSCI 546",
+            "section": "03",
+            "title": "Network Forensics",
+            "component": "LAB",
+            "start_time": "17:30",
+            "end_time": "18:45",
+            "start_time_raw": "17.30.00.000000",
+            "end_time_raw": "18.45.00.000000",
+            "instructors": [
+              "David Zeichick"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3877,
+            "course": "CSCI 111",
+            "section": "05",
+            "title": "Programming and Algorithms I",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 4443,
+            "course": "CSCI 344",
+            "section": "02",
+            "title": "Shell Programming",
+            "component": "ACT",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 4444,
+            "course": "CSCI 344",
+            "section": "03",
+            "title": "Shell Programming",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3862,
+            "course": "CSCI 111",
+            "section": "02",
+            "title": "Programming and Algorithms I",
+            "component": "ACT",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kathleen Isenegger"
+            ]
+          },
+          {
+            "class_nbr": 3878,
+            "course": "CSCI 440",
+            "section": "03",
+            "title": "Operating Systems",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 3856,
+            "course": "CSCI 448",
+            "section": "01",
+            "title": "Cybersecurity",
+            "component": "LEC",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3858,
+            "course": "CSCI 448",
+            "section": "02",
+            "title": "Cybersecurity",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "254",
+      "facility_id": "OCNL254",
+      "facility_descr": "O'Connell Center 254",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3952,
+            "course": "EECE 237",
+            "section": "01",
+            "title": "Embedded Systems Development",
+            "component": "LEC",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Mohammadreza Khani"
+            ]
+          },
+          {
+            "class_nbr": 3872,
+            "course": "CSCI 211",
+            "section": "01",
+            "title": "Programming and Algorithms II",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Tyson Henry"
+            ]
+          },
+          {
+            "class_nbr": 4442,
+            "course": "CSCI 344",
+            "section": "01",
+            "title": "Shell Programming",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3867,
+            "course": "CSCI 440",
+            "section": "01",
+            "title": "Operating Systems",
+            "component": "DIS",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          },
+          {
+            "class_nbr": 3853,
+            "course": "CSCI 370",
+            "section": "01",
+            "title": "Introduction to Databases",
+            "component": "DIS",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          },
+          {
+            "class_nbr": 3857,
+            "course": "CSCI 370",
+            "section": "02",
+            "title": "Introduction to Databases",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          },
+          {
+            "class_nbr": 4436,
+            "course": "CSCI 370",
+            "section": "03",
+            "title": "Introduction to Databases",
+            "component": "ACT",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3892,
+            "course": "CSCI 551",
+            "section": "01",
+            "title": "Numerical Methods and Parallel Programming",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Sam Siewert"
+            ]
+          },
+          {
+            "class_nbr": 4433,
+            "course": "CSCI 565",
+            "section": "01",
+            "title": "Server Side App Development",
+            "component": "LEC",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Brian Herring"
+            ]
+          },
+          {
+            "class_nbr": 3879,
+            "course": "CSCI 431W",
+            "section": "01",
+            "title": "Usability Engineering (W)",
+            "component": "DIS",
+            "start_time": "12:30",
+            "end_time": "13:20",
+            "start_time_raw": "12.30.00.000000",
+            "end_time_raw": "13.20.00.000000",
+            "instructors": [
+              "Kevin Buffardi"
+            ]
+          },
+          {
+            "class_nbr": 3880,
+            "course": "CSCI 431W",
+            "section": "02",
+            "title": "Usability Engineering (W)",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "15:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Kevin Buffardi"
+            ]
+          },
+          {
+            "class_nbr": 3773,
+            "course": "CIVL 175",
+            "section": "01",
+            "title": "Biological Processes in Environmental Engineering",
+            "component": "LEC",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Jackson Webster"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 3952,
+            "course": "EECE 237",
+            "section": "01",
+            "title": "Embedded Systems Development",
+            "component": "LEC",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Mohammadreza Khani"
+            ]
+          },
+          {
+            "class_nbr": 3872,
+            "course": "CSCI 211",
+            "section": "01",
+            "title": "Programming and Algorithms II",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Tyson Henry"
+            ]
+          },
+          {
+            "class_nbr": 4442,
+            "course": "CSCI 344",
+            "section": "01",
+            "title": "Shell Programming",
+            "component": "DIS",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Michael Larson"
+            ]
+          },
+          {
+            "class_nbr": 3867,
+            "course": "CSCI 440",
+            "section": "01",
+            "title": "Operating Systems",
+            "component": "DIS",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          },
+          {
+            "class_nbr": 3853,
+            "course": "CSCI 370",
+            "section": "01",
+            "title": "Introduction to Databases",
+            "component": "DIS",
+            "start_time": "15:00",
+            "end_time": "15:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          },
+          {
+            "class_nbr": 3857,
+            "course": "CSCI 370",
+            "section": "02",
+            "title": "Introduction to Databases",
+            "component": "ACT",
+            "start_time": "16:00",
+            "end_time": "16:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          },
+          {
+            "class_nbr": 4436,
+            "course": "CSCI 370",
+            "section": "03",
+            "title": "Introduction to Databases",
+            "component": "ACT",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Matthew Hill"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3892,
+            "course": "CSCI 551",
+            "section": "01",
+            "title": "Numerical Methods and Parallel Programming",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Sam Siewert"
+            ]
+          },
+          {
+            "class_nbr": 4433,
+            "course": "CSCI 565",
+            "section": "01",
+            "title": "Server Side App Development",
+            "component": "LEC",
+            "start_time": "11:00",
+            "end_time": "12:15",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.15.00.000000",
+            "instructors": [
+              "Brian Herring"
+            ]
+          },
+          {
+            "class_nbr": 3879,
+            "course": "CSCI 431W",
+            "section": "01",
+            "title": "Usability Engineering (W)",
+            "component": "DIS",
+            "start_time": "12:30",
+            "end_time": "13:20",
+            "start_time_raw": "12.30.00.000000",
+            "end_time_raw": "13.20.00.000000",
+            "instructors": [
+              "Kevin Buffardi"
+            ]
+          },
+          {
+            "class_nbr": 3773,
+            "course": "CIVL 175",
+            "section": "01",
+            "title": "Biological Processes in Environmental Engineering",
+            "component": "LEC",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Jackson Webster"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 3872,
+            "course": "CSCI 211",
+            "section": "01",
+            "title": "Programming and Algorithms II",
+            "component": "LEC",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Tyson Henry"
+            ]
+          },
+          {
+            "class_nbr": 3867,
+            "course": "CSCI 440",
+            "section": "01",
+            "title": "Operating Systems",
+            "component": "DIS",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Bryan Dixon"
+            ]
+          },
+          {
+            "class_nbr": 3893,
+            "course": "CSCI 300",
+            "section": "01",
+            "title": "Computer Science Seminar",
+            "component": "LEC",
+            "start_time": "14:00",
+            "end_time": "14:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "14.50.00.000000",
+            "instructors": [
+              "David Zeichick"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "334",
+      "facility_id": "OCNL334",
+      "facility_descr": "O'Connell Center 334",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3786,
+            "course": "CIVL 205",
+            "section": "01",
+            "title": "Civil Engineering Computing",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Steffen Mehl"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3795,
+            "course": "CIVL 140",
+            "section": "02",
+            "title": "Transportation Planning, Surveying, and Graphics",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Tyler Spangler"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 3786,
+            "course": "CIVL 205",
+            "section": "01",
+            "title": "Civil Engineering Computing",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Steffen Mehl"
+            ]
+          },
+          {
+            "class_nbr": 3796,
+            "course": "CIVL 140",
+            "section": "03",
+            "title": "Transportation Planning, Surveying, and Graphics",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Tyler Spangler"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3797,
+            "course": "CIVL 140",
+            "section": "04",
+            "title": "Transportation Planning, Surveying, and Graphics",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Tyler Spangler"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "337",
+      "facility_id": "OCNL337",
+      "facility_descr": "O'Connell Center 337",
+      "by_day": {
+        "Mo": [],
+        "Tu": [
+          {
+            "class_nbr": 3811,
+            "course": "CMGT 360W",
+            "section": "01",
+            "title": "Construction Project Management (W)",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "09:15",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "09.15.00.000000",
+            "instructors": [
+              "Brian Old"
+            ]
+          },
+          {
+            "class_nbr": 3837,
+            "course": "CMGT 360W",
+            "section": "02",
+            "title": "Construction Project Management (W)",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Brian Old"
+            ]
+          }
+        ],
+        "We": [],
+        "Th": [
+          {
+            "class_nbr": 3811,
+            "course": "CMGT 360W",
+            "section": "01",
+            "title": "Construction Project Management (W)",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "09:15",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "09.15.00.000000",
+            "instructors": [
+              "Brian Old"
+            ]
+          },
+          {
+            "class_nbr": 3837,
+            "course": "CMGT 360W",
+            "section": "02",
+            "title": "Construction Project Management (W)",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Brian Old"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "339",
+      "facility_id": "OCNL339",
+      "facility_descr": "O'Connell Center 339",
+      "by_day": {
+        "Mo": [],
+        "Tu": [],
+        "We": [],
+        "Th": [],
+        "Fr": [
+          {
+            "class_nbr": 3955,
+            "course": "EECE 110",
+            "section": "03",
+            "title": "Fun with Electronics and Systems",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Manas Manohar Punjabi",
+              "Tristen Svendsen"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "340",
+      "facility_id": "OCNL340",
+      "facility_descr": "O'Connell Center 340",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3944,
+            "course": "EECE 446",
+            "section": "05",
+            "title": "Introduction to Computer Networks and Network Management",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Kurtis Kredo"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3943,
+            "course": "EECE 446",
+            "section": "03",
+            "title": "Introduction to Computer Networks and Network Management",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Kurtis Kredo"
+            ]
+          }
+        ],
+        "We": [],
+        "Th": [
+          {
+            "class_nbr": 3946,
+            "course": "EECE 446",
+            "section": "04",
+            "title": "Introduction to Computer Networks and Network Management",
+            "component": "LAB",
+            "start_time": "08:00",
+            "end_time": "10:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Zhaohong Wang"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "344",
+      "facility_id": "OCNL344",
+      "facility_descr": "O'Connell Center 344",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 3949,
+            "course": "EECE 215",
+            "section": "02",
+            "title": "Practical Circuits and Electronics",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "15:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "David Silveira"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3950,
+            "course": "EECE 215",
+            "section": "03",
+            "title": "Practical Circuits and Electronics",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "David Silveira"
+            ]
+          },
+          {
+            "class_nbr": 3927,
+            "course": "EECE 211L",
+            "section": "02",
+            "title": "Linear Circuits I Activity",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "15:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Carlos Diaz"
+            ]
+          }
+        ],
+        "We": [],
+        "Th": [
+          {
+            "class_nbr": 3926,
+            "course": "EECE 211L",
+            "section": "01",
+            "title": "Linear Circuits I Activity",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Ghang-Ho Lee"
+            ]
+          },
+          {
+            "class_nbr": 4273,
+            "course": "EECE 316",
+            "section": "02",
+            "title": "Electronics II",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Hassan Shahidi Salehi"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 3929,
+            "course": "EECE 315",
+            "section": "02",
+            "title": "Electronics I",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Meghdad Hajimorad"
+            ]
+          },
+          {
+            "class_nbr": 3935,
+            "course": "EECE 315",
+            "section": "03",
+            "title": "Electronics I",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Meghdad Hajimorad"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "346",
+      "facility_id": "OCNL346",
+      "facility_descr": "O'Connell Center 346",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4275,
+            "course": "EECE 637",
+            "section": "01",
+            "title": "Advanced Embedded Systems",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "09:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Hadil Mustafa"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 3936,
+            "course": "EECE 344",
+            "section": "02",
+            "title": "Embedded Systems Design",
+            "component": "LAB",
+            "start_time": "08:00",
+            "end_time": "10:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Hadil Mustafa"
+            ]
+          },
+          {
+            "class_nbr": 3938,
+            "course": "EECE 144",
+            "section": "03",
+            "title": "Logic Design Fundamentals",
+            "component": "ACT",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Hadil Mustafa"
+            ]
+          },
+          {
+            "class_nbr": 4977,
+            "course": "EECE 316",
+            "section": "03",
+            "title": "Electronics II",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Hassan Shahidi Salehi"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4275,
+            "course": "EECE 637",
+            "section": "01",
+            "title": "Advanced Embedded Systems",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "09:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Hadil Mustafa"
+            ]
+          },
+          {
+            "class_nbr": 3937,
+            "course": "EECE 344",
+            "section": "03",
+            "title": "Embedded Systems Design",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Jose Soto Mendez"
+            ]
+          },
+          {
+            "class_nbr": 3958,
+            "course": "EECE 237",
+            "section": "04",
+            "title": "Embedded Systems Development",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "15:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "David Silveira"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 3960,
+            "course": "EECE 237",
+            "section": "06",
+            "title": "Embedded Systems Development",
+            "component": "ACT",
+            "start_time": "09:00",
+            "end_time": "10:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Hadil Mustafa"
+            ]
+          },
+          {
+            "class_nbr": 3957,
+            "course": "EECE 237",
+            "section": "03",
+            "title": "Embedded Systems Development",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Carlos Diaz"
+            ]
+          },
+          {
+            "class_nbr": 3940,
+            "course": "EECE 144",
+            "section": "02",
+            "title": "Logic Design Fundamentals",
+            "component": "ACT",
+            "start_time": "14:00",
+            "end_time": "15:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.50.00.000000",
+            "instructors": [
+              "Jose Soto Mendez"
+            ]
+          }
+        ],
+        "Fr": [
+          {
+            "class_nbr": 3959,
+            "course": "EECE 237",
+            "section": "05",
+            "title": "Embedded Systems Development",
+            "component": "ACT",
+            "start_time": "12:00",
+            "end_time": "13:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Mohammadreza Khani"
+            ]
+          }
+        ],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "431",
+      "facility_id": "OCNL431",
+      "facility_descr": "O'Connell Center 431",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4076,
+            "course": "MECA 140",
+            "section": "01",
+            "title": "Introduction to Design and Automation",
+            "component": "DIS",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Scott Vanni"
+            ]
+          },
+          {
+            "class_nbr": 4088,
+            "course": "MECH 140",
+            "section": "01",
+            "title": "Introduction to Design and Automation",
+            "component": "DIS",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Scott Vanni"
+            ]
+          },
+          {
+            "class_nbr": 4077,
+            "course": "MECA 140",
+            "section": "02",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Scott Vanni"
+            ]
+          },
+          {
+            "class_nbr": 4089,
+            "course": "MECH 140",
+            "section": "02",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Scott Vanni"
+            ]
+          },
+          {
+            "class_nbr": 4123,
+            "course": "MECH 340W",
+            "section": "02",
+            "title": "Mechanical Engineering Design (W)",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "16:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Dennis O'Connor"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 4078,
+            "course": "MECA 140",
+            "section": "03",
+            "title": "Introduction to Design and Automation",
+            "component": "DIS",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4106,
+            "course": "MECH 140",
+            "section": "03",
+            "title": "Introduction to Design and Automation",
+            "component": "DIS",
+            "start_time": "09:00",
+            "end_time": "09:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "09.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4079,
+            "course": "MECA 140",
+            "section": "04",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4107,
+            "course": "MECH 140",
+            "section": "04",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "10:00",
+            "end_time": "10:50",
+            "start_time_raw": "10.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4086,
+            "course": "MECA 140",
+            "section": "05",
+            "title": "Introduction to Design and Automation",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4119,
+            "course": "MECH 140",
+            "section": "05",
+            "title": "Introduction to Design and Automation",
+            "component": "DIS",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4087,
+            "course": "MECA 140",
+            "section": "06",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4120,
+            "course": "MECH 140",
+            "section": "06",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "12:00",
+            "end_time": "12:50",
+            "start_time_raw": "12.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4077,
+            "course": "MECA 140",
+            "section": "02",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "09:00",
+            "end_time": "10:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Scott Vanni"
+            ]
+          },
+          {
+            "class_nbr": 4089,
+            "course": "MECH 140",
+            "section": "02",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "09:00",
+            "end_time": "10:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Scott Vanni"
+            ]
+          },
+          {
+            "class_nbr": 4124,
+            "course": "MECH 340W",
+            "section": "03",
+            "title": "Mechanical Engineering Design (W)",
+            "component": "ACT",
+            "start_time": "15:00",
+            "end_time": "16:50",
+            "start_time_raw": "15.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Dennis O'Connor"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 4079,
+            "course": "MECA 140",
+            "section": "04",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "09:00",
+            "end_time": "10:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4107,
+            "course": "MECH 140",
+            "section": "04",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "09:00",
+            "end_time": "10:50",
+            "start_time_raw": "09.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4087,
+            "course": "MECA 140",
+            "section": "06",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          },
+          {
+            "class_nbr": 4120,
+            "course": "MECH 140",
+            "section": "06",
+            "title": "Introduction to Design and Automation",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "12:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "12.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "434",
+      "facility_id": "OCNL434",
+      "facility_descr": "O'Connell Center 434",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4754,
+            "course": "CIMT 251",
+            "section": "01",
+            "title": "Concrete Supply Logistics",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Mohammed Albahttiti"
+            ]
+          },
+          {
+            "class_nbr": 4059,
+            "course": "CIMT 466W",
+            "section": "01",
+            "title": "Concrete Capstone Project (W)",
+            "component": "DIS",
+            "start_time": "16:00",
+            "end_time": "17:50",
+            "start_time_raw": "16.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Feraidon Ataie"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 4065,
+            "course": "CIMT 455",
+            "section": "01",
+            "title": "Precast Concrete Production Management",
+            "component": "DIS",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Mohammed Albahttiti"
+            ]
+          },
+          {
+            "class_nbr": 3782,
+            "course": "CIVL 212",
+            "section": "01",
+            "title": "Civil Engineering Materials",
+            "component": "LEC",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Mohammed Albahttiti"
+            ]
+          },
+          {
+            "class_nbr": 4063,
+            "course": "CIMT 365",
+            "section": "01",
+            "title": "Advanced Concrete Technology",
+            "component": "DIS",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Mohammed Albahttiti"
+            ]
+          },
+          {
+            "class_nbr": 4058,
+            "course": "CIMT 241",
+            "section": "01",
+            "title": "Concrete Construction Methods",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "15:15",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.15.00.000000",
+            "instructors": [
+              "Feraidon Ataie"
+            ]
+          },
+          {
+            "class_nbr": 4066,
+            "course": "CIMT 363W",
+            "section": "01",
+            "title": "Sustainability and the Built Environment (W)",
+            "component": "DIS",
+            "start_time": "15:30",
+            "end_time": "16:45",
+            "start_time_raw": "15.30.00.000000",
+            "end_time_raw": "16.45.00.000000",
+            "instructors": [
+              "Feraidon Ataie"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4754,
+            "course": "CIMT 251",
+            "section": "01",
+            "title": "Concrete Supply Logistics",
+            "component": "LEC",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Mohammed Albahttiti"
+            ]
+          },
+          {
+            "class_nbr": 4057,
+            "course": "CIMT 101",
+            "section": "01",
+            "title": "Introduction to Concrete",
+            "component": "DIS",
+            "start_time": "17:00",
+            "end_time": "17:50",
+            "start_time_raw": "17.00.00.000000",
+            "end_time_raw": "17.50.00.000000",
+            "instructors": [
+              "Nick Steinberg"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 4065,
+            "course": "CIMT 455",
+            "section": "01",
+            "title": "Precast Concrete Production Management",
+            "component": "DIS",
+            "start_time": "09:30",
+            "end_time": "10:45",
+            "start_time_raw": "09.30.00.000000",
+            "end_time_raw": "10.45.00.000000",
+            "instructors": [
+              "Mohammed Albahttiti"
+            ]
+          },
+          {
+            "class_nbr": 3782,
+            "course": "CIVL 212",
+            "section": "01",
+            "title": "Civil Engineering Materials",
+            "component": "LEC",
+            "start_time": "11:00",
+            "end_time": "11:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "11.50.00.000000",
+            "instructors": [
+              "Mohammed Albahttiti"
+            ]
+          },
+          {
+            "class_nbr": 4063,
+            "course": "CIMT 365",
+            "section": "01",
+            "title": "Advanced Concrete Technology",
+            "component": "DIS",
+            "start_time": "13:00",
+            "end_time": "13:50",
+            "start_time_raw": "13.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Mohammed Albahttiti"
+            ]
+          },
+          {
+            "class_nbr": 4058,
+            "course": "CIMT 241",
+            "section": "01",
+            "title": "Concrete Construction Methods",
+            "component": "DIS",
+            "start_time": "14:00",
+            "end_time": "15:15",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "15.15.00.000000",
+            "instructors": [
+              "Feraidon Ataie"
+            ]
+          },
+          {
+            "class_nbr": 4066,
+            "course": "CIMT 363W",
+            "section": "01",
+            "title": "Sustainability and the Built Environment (W)",
+            "component": "DIS",
+            "start_time": "15:30",
+            "end_time": "16:45",
+            "start_time_raw": "15.30.00.000000",
+            "end_time_raw": "16.45.00.000000",
+            "instructors": [
+              "Feraidon Ataie"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    },
+    {
+      "room": "438",
+      "facility_id": "OCNL438",
+      "facility_descr": "O'Connell Center 438",
+      "by_day": {
+        "Mo": [
+          {
+            "class_nbr": 4100,
+            "course": "MECH 100L",
+            "section": "01",
+            "title": "Graphics I Laboratory",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Nathan Anderson",
+              "Tristen Svendsen"
+            ]
+          },
+          {
+            "class_nbr": 4121,
+            "course": "MECH 208",
+            "section": "02",
+            "title": "Introduction to Technical Computing",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Yang Chao"
+            ]
+          }
+        ],
+        "Tu": [
+          {
+            "class_nbr": 4097,
+            "course": "MECH 200",
+            "section": "02",
+            "title": "Graphics II",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          }
+        ],
+        "We": [
+          {
+            "class_nbr": 4476,
+            "course": "MECH 408",
+            "section": "01",
+            "title": "Modeling and Simulation",
+            "component": "LEC",
+            "start_time": "08:00",
+            "end_time": "10:50",
+            "start_time_raw": "08.00.00.000000",
+            "end_time_raw": "10.50.00.000000",
+            "instructors": [
+              "Gregory Watkins"
+            ]
+          },
+          {
+            "class_nbr": 4101,
+            "course": "MECH 100L",
+            "section": "02",
+            "title": "Graphics I Laboratory",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Nathan Anderson",
+              "Tristen Svendsen"
+            ]
+          },
+          {
+            "class_nbr": 4102,
+            "course": "MECH 200",
+            "section": "03",
+            "title": "Graphics II",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          }
+        ],
+        "Th": [
+          {
+            "class_nbr": 4122,
+            "course": "MECH 208",
+            "section": "03",
+            "title": "Introduction to Technical Computing",
+            "component": "LAB",
+            "start_time": "11:00",
+            "end_time": "13:50",
+            "start_time_raw": "11.00.00.000000",
+            "end_time_raw": "13.50.00.000000",
+            "instructors": [
+              "Yang Chao"
+            ]
+          },
+          {
+            "class_nbr": 4115,
+            "course": "MECH 200",
+            "section": "04",
+            "title": "Graphics II",
+            "component": "LAB",
+            "start_time": "14:00",
+            "end_time": "16:50",
+            "start_time_raw": "14.00.00.000000",
+            "end_time_raw": "16.50.00.000000",
+            "instructors": [
+              "Matthew Mione"
+            ]
+          }
+        ],
+        "Fr": [],
+        "Sa": [],
+        "Su": []
+      }
+    }
+  ],
+  "ambiguous": [
+    {
+      "class_nbr": 4002,
+      "course": "CAGD 325",
+      "section": "01",
+      "title": "Motion Capture",
+      "days": "MoWe",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "start_dt": "01/20/2026",
+      "end_dt": "05/08/2026",
+      "rooms": [
+        "119",
+        "133"
+      ]
+    },
+    {
+      "class_nbr": 4805,
+      "course": "CAGD 325",
+      "section": "02",
+      "title": "Motion Capture",
+      "days": "MoWe",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "start_dt": "01/20/2026",
+      "end_dt": "05/08/2026",
+      "rooms": [
+        "119",
+        "133"
+      ]
+    },
+    {
+      "class_nbr": 4016,
+      "course": "CAGD 350",
+      "section": "01",
+      "title": "3D Scanning",
+      "days": "TuTh",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "start_dt": "01/20/2026",
+      "end_dt": "05/08/2026",
+      "rooms": [
+        "119",
+        "136"
+      ]
+    },
+    {
+      "class_nbr": 4017,
+      "course": "CAGD 350",
+      "section": "02",
+      "title": "3D Scanning",
+      "days": "TuTh",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "start_dt": "01/20/2026",
+      "end_dt": "05/08/2026",
+      "rooms": [
+        "119",
+        "136"
+      ]
+    }
+  ]
+}
