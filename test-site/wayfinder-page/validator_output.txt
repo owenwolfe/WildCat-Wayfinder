@@ -1,0 +1,18 @@
+Wayfinder repo validation
+root: /mnt/data/wildcat_latest/WildCat-Wayfinder-main/files
+
+WARN: embedded source image present in holt-files/holt-floor-1.json
+WARN: embedded source image present in holt-files/holt-floor-2.json
+WARN: embedded source image present in holt-files/holt-floor-3.json
+WARN: embedded source image present in o'connell-files/oconnell1.json
+WARN: embedded source image present in o'connell-files/oconnell2.json
+ERROR: oconnell2.json floorLevel is not 2
+WARN: oconnell2.json floorLabel is not Floor 2
+WARN: embedded source image present in o'connell-files/oconnell3.json
+WARN: embedded source image present in o'connell-files/oconnell4.json
+WARN: embedded source image present in plumas-files/plumas1.json
+WARN: embedded source image present in plumas-files/plumas2.json
+WARN: embedded source image present in plumas-files/plumas3.json
+WARN: HOLT class rooms missing from graph: 125, 173, 187, 307, 309, 329, 337, 350, 352, 357
+WARN: OCNL class rooms missing from graph: 119, 120, 121, 123, 124, 127, 130, 131, 133, 136, 225, 237, 239, 241, 244, 251, 254
+WARN: PLMS class rooms missing from graph: 001, 116A, 201, 205
